@@ -510,6 +510,81 @@ footer{background:#080808;padding:40px 48px;border-top:1px solid rgba(255,255,25
   .hb-btn{display:flex}
 }
 
+
+/* ════ TEXT COLOR FIXES ══════════════════════════════════════════ */
+
+/* ライト背景内の本文テキストを確実に暗色に */
+.sec-light .ft-body,
+.sec-light p,
+.sec-light li,
+.sec-light .ft-body,
+.sec-light .answer-body,
+.sec-light .flow-body,
+.sec-light .fl-desc {
+  color: #444;
+}
+
+/* ライト背景内の見出し系 */
+.sec-light h1,.sec-light h2,.sec-light h3,
+.sec-light .h2,.sec-light .sec-title {
+  color: #111;
+}
+
+/* ライト背景内のem（強調）は pink-dark */
+.sec-light em { color: var(--pink-dark); }
+
+/* ダーク背景内のem（強調）は pink */
+.sec em, .page-hero em { color: var(--pink); }
+
+/* ════ KEY MESSAGE EMPHASIS ══════════════════════════════════════ */
+
+/* ヒーローのアクセント */
+.hero-title .accent { color: var(--pink); }
+
+/* ミッション引用ブロック */
+.mission-block {
+  border-left: 3px solid var(--pink);
+  padding-left: 24px;
+}
+.mission-block em, .mission-block strong {
+  color: var(--pink);
+}
+
+/* セクションラベル（英語部分）*/
+.section-label, .label {
+  color: var(--pink);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.sec-light .section-label,
+.sec-light .label { color: var(--pink-dark); }
+
+/* 安心材料バーのチェック */
+.rs-item strong { color: var(--pink); }
+.sec-light .rs-item strong { color: var(--pink-dark); }
+
+/* キーポイントのem強調（黒背景上） */
+.key-point em, .sec-title em { color: var(--pink); }
+.sec-light .key-point em,
+.sec-light .sec-title em { color: var(--pink-dark); }
+
+/* フロータイムラインの番号・ラベル */
+.ft-num { color: var(--pink-dark); }
+.ft-time { color: var(--pink-dark); font-weight: 700; }
+.ft-title { color: #111; font-weight: 800; }
+.ft-body { color: #444; }
+
+/* ダーク背景上のft-stepは白文字 */
+.sec:not(.sec-light) .ft-num { color: var(--pink); }
+.sec:not(.sec-light) .ft-time { color: var(--pink); }
+.sec:not(.sec-light) .ft-title { color: var(--white); }
+.sec:not(.sec-light) .ft-body { color: var(--gray-light); }
+
+/* ページヒーローのem */
+.page-title em { color: var(--pink); }
+
 </style>
 </head>
 <body>

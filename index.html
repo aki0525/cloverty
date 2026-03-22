@@ -1161,6 +1161,81 @@ section + .sec-light {
   .hb-btn{display:flex}
 }
 
+
+/* ════ TEXT COLOR FIXES ══════════════════════════════════════════ */
+
+/* ライト背景内の本文テキストを確実に暗色に */
+.sec-light .ft-body,
+.sec-light p,
+.sec-light li,
+.sec-light .ft-body,
+.sec-light .answer-body,
+.sec-light .flow-body,
+.sec-light .fl-desc {
+  color: #444;
+}
+
+/* ライト背景内の見出し系 */
+.sec-light h1,.sec-light h2,.sec-light h3,
+.sec-light .h2,.sec-light .sec-title {
+  color: #111;
+}
+
+/* ライト背景内のem（強調）は pink-dark */
+.sec-light em { color: var(--pink-dark); }
+
+/* ダーク背景内のem（強調）は pink */
+.sec em, .page-hero em { color: var(--pink); }
+
+/* ════ KEY MESSAGE EMPHASIS ══════════════════════════════════════ */
+
+/* ヒーローのアクセント */
+.hero-title .accent { color: var(--pink); }
+
+/* ミッション引用ブロック */
+.mission-block {
+  border-left: 3px solid var(--pink);
+  padding-left: 24px;
+}
+.mission-block em, .mission-block strong {
+  color: var(--pink);
+}
+
+/* セクションラベル（英語部分）*/
+.section-label, .label {
+  color: var(--pink);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.sec-light .section-label,
+.sec-light .label { color: var(--pink-dark); }
+
+/* 安心材料バーのチェック */
+.rs-item strong { color: var(--pink); }
+.sec-light .rs-item strong { color: var(--pink-dark); }
+
+/* キーポイントのem強調（黒背景上） */
+.key-point em, .sec-title em { color: var(--pink); }
+.sec-light .key-point em,
+.sec-light .sec-title em { color: var(--pink-dark); }
+
+/* フロータイムラインの番号・ラベル */
+.ft-num { color: var(--pink-dark); }
+.ft-time { color: var(--pink-dark); font-weight: 700; }
+.ft-title { color: #111; font-weight: 800; }
+.ft-body { color: #444; }
+
+/* ダーク背景上のft-stepは白文字 */
+.sec:not(.sec-light) .ft-num { color: var(--pink); }
+.sec:not(.sec-light) .ft-time { color: var(--pink); }
+.sec:not(.sec-light) .ft-title { color: var(--white); }
+.sec:not(.sec-light) .ft-body { color: var(--gray-light); }
+
+/* ページヒーローのem */
+.page-title em { color: var(--pink); }
+
 </style>
 </head>
 <body>
@@ -1207,7 +1282,7 @@ section + .sec-light {
     <div class="hero-tagline">所沢・埼玉西部 / 小1〜中3 / 2026年4月始動</div>
     <h1 class="hero-title">
       <span class="line1">所沢発、ジュニアサッカーブランド</span>
-      <span class="accent">CLOVERTY</span>
+      <span class="accent" style="color:var(--pink);font-weight:900;letter-spacing:4px">CLOVERTY</span>
     </h1>
     <div class="hero-specs">
       <span class="hs-item">週3日活動（水・土・日）</span>
@@ -1216,7 +1291,7 @@ section + .sec-light {
       <span class="hs-sep">｜</span>
       <span class="hs-item">体験参加受付中</span>
     </div>
-    <p class="hero-position">通いやすさと育成の両立を目指したクラブです。</p>
+    <p class="hero-position"><strong style="color:var(--white);font-weight:700">通いやすさ</strong>と<strong style="color:var(--white);font-weight:700">育成の両立</strong>を目指したクラブです。</p>
     <div class="hero-age-line">
       <span class="hal-item">スクール：幼児〜中学生</span>
       <span class="hal-sep">／</span>
