@@ -452,6 +452,76 @@ footer{background:#080808;padding:40px 48px;border-top:1px solid rgba(255,255,25
   .float-cta{display:block}
 }
 
+
+/* ── Schedule Tabs ── */
+.sched-tabs{display:flex;gap:2px;margin-bottom:32px;background:rgba(255,255,255,0.04);padding:4px;border-radius:2px;flex-wrap:wrap}
+.stab{flex:1;padding:12px 16px;background:none;border:none;color:#888;font-family:'Noto Sans JP',sans-serif;font-size:13px;font-weight:600;cursor:pointer;border-radius:1px;transition:background 0.2s,color 0.2s;white-space:nowrap;letter-spacing:0.5px}
+.stab:hover{color:#fff}
+.stab-active{background:#1a1a1a!important;color:#fff!important}
+/* School schedule */
+.sched-category-head{margin-bottom:28px}
+.sch-cat-label{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:5px 16px;border-radius:100px;display:inline-block;margin-bottom:10px}
+.school-cat{background:rgba(200,200,200,0.1);color:#ddd}
+.club-cat{background:rgba(232,112,154,0.15);color:var(--pink)}
+.sch-cat-desc{font-size:13px;color:#888;line-height:1.8}
+.unified-sched{display:flex;flex-direction:column;gap:2px}
+.us-day{background:#111;padding:20px 24px}
+.us-day-label{font-size:10px;font-weight:800;letter-spacing:3px;color:var(--pink);text-transform:uppercase;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid rgba(232,112,154,0.2)}
+.us-rows{display:flex;flex-direction:column;gap:2px}
+.us-row{display:grid;grid-template-columns:120px 1fr 1fr 80px;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.04)}
+.us-row:last-child{border-bottom:none}
+.us-row-adjust{border-left:2px solid rgba(220,80,80,0.5);padding-left:8px}
+.us-badge{font-size:10px;font-weight:800;letter-spacing:1px;padding:3px 10px;border-radius:100px;text-align:center;display:inline-block}
+.badge-beginner{background:rgba(255,255,255,0.08);color:#ccc}
+.badge-skillup{background:rgba(255,255,255,0.1);color:#fff}
+.badge-elite{background:rgba(240,192,64,0.12);color:#f0c040}
+.badge-adjust{background:rgba(220,80,80,0.15)!important;color:rgba(220,80,80,0.9)!important}
+.badge-club{background:rgba(232,112,154,0.15);color:var(--pink)}
+.us-target{font-size:13px;color:#fff;font-weight:600}
+.us-time{font-size:13px;color:#aaa}
+.us-price{font-size:16px;font-weight:900;color:#fff;text-align:right}
+.sched-note{font-size:11px;color:#666;margin-top:16px;line-height:1.9}
+/* Club schedule */
+.club-sched-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(255,255,255,0.04);margin-bottom:16px}
+.cs-card{background:#111;padding:28px 20px;border-top:2px solid transparent;transition:border-color 0.2s}
+.cs-main{border-top-color:var(--pink)}
+.cs-card:hover{border-top-color:rgba(232,112,154,0.5)}
+.cs-day{font-size:16px;font-weight:800;color:#fff;margin-bottom:8px}
+.cs-time{font-size:18px;font-weight:700;color:var(--pink);margin-bottom:6px}
+.cs-venue{font-size:12px;color:#888;line-height:1.7;margin-bottom:10px}
+.cs-venue span{color:#666;font-size:11px}
+.cs-type{font-size:10px;letter-spacing:1px;padding:4px 12px;background:rgba(232,112,154,0.1);color:var(--pink);border-radius:2px;display:inline-block}
+/* All schedule */
+.all-sched-wrap{display:flex;flex-direction:column;gap:2px}
+.all-day-block{background:#111;padding:18px 24px}
+.all-highlight{border-left:2px solid var(--pink)}
+.all-day-title{font-size:10px;font-weight:800;letter-spacing:3px;color:#888;text-transform:uppercase;margin-bottom:10px}
+.all-row{display:grid;grid-template-columns:60px 100px 1fr 1fr;gap:8px;align-items:center;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:13px;color:#aaa}
+.all-row:last-child{border-bottom:none}
+.all-adjust{color:rgba(220,80,80,0.8)!important}
+.all-adjust span{color:rgba(220,80,80,0.8)!important}
+.all-flag{font-size:9px;font-weight:900;letter-spacing:1px;padding:2px 7px;border-radius:100px;text-align:center;display:inline-block}
+.flag-school{background:rgba(255,255,255,0.1);color:#bbb}
+.flag-club{background:rgba(232,112,154,0.2);color:var(--pink)}
+/* Responsive */
+@media(max-width:900px){
+  .club-sched-grid{grid-template-columns:1fr 1fr}
+  .us-row{grid-template-columns:100px 1fr 1fr 70px}
+}
+@media(max-width:600px){
+  .sched-tabs{gap:1px}
+  .stab{font-size:11px;padding:10px 10px}
+  .club-sched-grid{grid-template-columns:1fr 1fr}
+  .us-row{grid-template-columns:90px 1fr;gap:6px}
+  .us-time{grid-column:1;font-size:11px}
+  .us-price{grid-column:2;font-size:14px;text-align:left}
+  .all-row{grid-template-columns:50px 80px 1fr}
+}
+@media(max-width:400px){
+  .club-sched-grid{grid-template-columns:1fr}
+  .all-row{grid-template-columns:50px 1fr}
+}
+
 </style>
 </head>
 <body>
@@ -491,65 +561,218 @@ footer{background:#080808;padding:40px 48px;border-top:1px solid rgba(255,255,25
 </div>
 <div class="sec">
   <div class="sec-inner">
-    <span class="section-label reveal">Weekly Schedule / 週間スケジュール</span>
-    <h2 class="sec-title reveal">活動日と<em>時間帯</em>。</h2>
-    <div class="schedule-grid">
-      <div class="day-card reveal">
-        <div class="day-name">水曜</div>
-        <div class="day-time">17:00〜18:30</div>
-        <div class="day-venue">航空公園フットサルコート<br>（会場は都度ご案内）</div>
-        <div class="day-type">トレーニング（90分）</div>
-      </div>
-      <div class="day-card reveal d1">
-        <div class="day-name">土曜</div>
-        <div class="day-time">午前 / 午後</div>
-        <div class="day-venue">試合により変動<br>（グラウンド・対戦相手による）</div>
-        <div class="day-type">試合またはトレーニング</div>
-      </div>
-      <div class="day-card reveal d2">
-        <div class="day-name">日曜</div>
-        <div class="day-time">午前 / 午後</div>
-        <div class="day-venue">試合により変動<br>（グラウンド・対戦相手による）</div>
-        <div class="day-type">試合またはトレーニング</div>
-      </div>
-      <div class="day-card reveal d3">
-        <div class="day-name">祝日</div>
-        <div class="day-time">午前中</div>
-        <div class="day-venue">スケジュールに準ずる</div>
-        <div class="day-type">試合またはトレーニング</div>
-      </div>
+    <span class="section-label reveal">Schedule Overview / スケジュール概要</span>
+    <h2 class="sec-title reveal">スクールと<em>クラブ</em>で<br>活動日が異なります。</h2>
+    <p style="font-size:14px;color:var(--gray-light);line-height:2;margin-bottom:48px;max-width:640px">
+      CLOVERTYはサッカースクールとクラブチームの2軸で活動しています。
+      それぞれ活動曜日・時間が異なりますので、ご確認ください。
+    </p>
+
+    <!-- タブ切り替え -->
+    <div class="sched-tabs reveal">
+      <button class="stab stab-active" data-tab="school">⚽ SOCCER SCHOOL</button>
+      <button class="stab" data-tab="club">🏆 CLOVERTY FC U-10</button>
+      <button class="stab" data-tab="all">📅 全体一覧</button>
     </div>
-    <div class="note-box reveal">
-      ※ 水曜トレーニングは17:00〜18:30（90分）を予定。<br>
-      ※ 土日祝の試合・トレーニング時間は大会・グラウンド確保状況により変動します。<br>
-      ※ 土日祝がトレーニングの場合は午前中を予定しています。<br>
-      ※ 大会・試合により時間変更がある場合は事前にご連絡します。<br>
-      ※ 火曜日は会員向けスクール参加日（プレミアムコースまたはチケット制）。
+
+    <!-- ─── スクール ─── -->
+    <div class="stab-content" id="tab-school">
+      <div class="sched-category-head">
+        <div class="sch-cat-label school-cat">CLOVERTY SOCCER SCHOOL</div>
+        <p class="sch-cat-desc">ビギナー・スキルアップ・エリートの3クラス。月〜火・土〜日曜日に開催。</p>
+      </div>
+      <div class="unified-sched">
+        <!-- 月曜 -->
+        <div class="us-day">
+          <div class="us-day-label">月曜日</div>
+          <div class="us-rows">
+            <div class="us-row">
+              <span class="us-badge badge-skillup">スキルアップ①</span>
+              <span class="us-target">幼児〜2年生</span>
+              <span class="us-time">17:00〜18:15</span>
+              <span class="us-price">¥5,900</span>
+            </div>
+            <div class="us-row">
+              <span class="us-badge badge-skillup">スキルアップ②</span>
+              <span class="us-target">3〜6年生</span>
+              <span class="us-time">18:30〜19:45</span>
+              <span class="us-price">¥5,900</span>
+            </div>
+          </div>
+        </div>
+        <!-- 火曜 -->
+        <div class="us-day">
+          <div class="us-day-label">火曜日</div>
+          <div class="us-rows">
+            <div class="us-row">
+              <span class="us-badge badge-elite">エリート①</span>
+              <span class="us-target">1・2・3年生</span>
+              <span class="us-time">17:00〜18:15</span>
+              <span class="us-price">¥7,700</span>
+            </div>
+            <div class="us-row">
+              <span class="us-badge badge-elite">エリート②</span>
+              <span class="us-target">4・5・6年生</span>
+              <span class="us-time">18:30〜19:45</span>
+              <span class="us-price">¥7,700</span>
+            </div>
+          </div>
+        </div>
+        <!-- 土曜 -->
+        <div class="us-day">
+          <div class="us-day-label">土曜日</div>
+          <div class="us-rows">
+            <div class="us-row">
+              <span class="us-badge badge-beginner">ビギナー①</span>
+              <span class="us-target">幼児</span>
+              <span class="us-time">16:00〜17:00</span>
+              <span class="us-price">¥5,200</span>
+            </div>
+            <div class="us-row">
+              <span class="us-badge badge-beginner">ビギナー②</span>
+              <span class="us-target">1〜6年生</span>
+              <span class="us-time">17:15〜18:30</span>
+              <span class="us-price">¥5,900</span>
+            </div>
+          </div>
+        </div>
+        <!-- 日曜 -->
+        <div class="us-day">
+          <div class="us-day-label">日曜日</div>
+          <div class="us-rows">
+            <div class="us-row us-row-adjust">
+              <span class="us-badge badge-elite badge-adjust">エリート①</span>
+              <span class="us-target" style="color:rgba(220,80,80,0.9)">1・2・3年生</span>
+              <span class="us-time" style="color:rgba(220,80,80,0.9)">17:20〜18:35</span>
+              <span class="us-price" style="color:rgba(220,80,80,0.9)">¥7,700 <small style="font-size:9px;color:rgba(220,80,80,0.6)">※調整中</small></span>
+            </div>
+            <div class="us-row">
+              <span class="us-badge badge-elite">エリート②</span>
+              <span class="us-target">中学生以上</span>
+              <span class="us-time">18:40〜19:55</span>
+              <span class="us-price">¥7,700</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="sched-note">※ コーチの判断により上のカテゴリーへの飛び級・他クラスへのご案内をする場合があります。</p>
+      <div style="margin-top:24px"><a href="school.html" class="btn-text" style="color:#aaa;font-weight:600">スクール詳細を見る →</a></div>
+    </div>
+
+    <!-- ─── クラブ ─── -->
+    <div class="stab-content" id="tab-club" style="display:none">
+      <div class="sched-category-head">
+        <div class="sch-cat-label club-cat">CLOVERTY FC U-10</div>
+        <p class="sch-cat-desc">コーチ推薦制。試合・トレーニングを週3〜4回実施。水・土・日・祝日が活動日。</p>
+      </div>
+      <div class="club-sched-grid">
+        <div class="cs-card cs-main">
+          <div class="cs-day">水曜日</div>
+          <div class="cs-time">17:00〜18:15</div>
+          <div class="cs-venue">航空公園フットサルコート<br><span>（会場は都度ご案内）</span></div>
+          <div class="cs-type">トレーニング</div>
+        </div>
+        <div class="cs-card">
+          <div class="cs-day">土曜日</div>
+          <div class="cs-time">午前中予定</div>
+          <div class="cs-venue">グラウンド確保状況・<br>対戦相手により変動</div>
+          <div class="cs-type">試合 または トレーニング</div>
+        </div>
+        <div class="cs-card">
+          <div class="cs-day">日曜日</div>
+          <div class="cs-time">午前中予定</div>
+          <div class="cs-venue">グラウンド確保状況・<br>対戦相手により変動</div>
+          <div class="cs-type">試合 または トレーニング</div>
+        </div>
+        <div class="cs-card">
+          <div class="cs-day">祝日</div>
+          <div class="cs-time">午前中予定</div>
+          <div class="cs-venue">会場・日程は都度案内</div>
+          <div class="cs-type">試合 または トレーニング</div>
+        </div>
+      </div>
+      <p class="sched-note">※ 土日祝の時間はグラウンド確保・対戦相手により変動します。<br>※ 月謝：¥11,000〜¥14,500/月（参加プランによる）</p>
+      <div style="margin-top:24px"><a href="club.html" class="btn-text" style="color:var(--pink);font-weight:600">クラブチーム詳細を見る →</a></div>
+    </div>
+
+    <!-- ─── 全体一覧 ─── -->
+    <div class="stab-content" id="tab-all" style="display:none">
+      <div class="all-sched-wrap">
+        <div class="all-day-block">
+          <div class="all-day-title">月曜日</div>
+          <div class="all-row"><span class="all-flag flag-school">スクール</span><span class="us-badge badge-skillup">スキルアップ①</span><span>幼児〜2年</span><span>17:00〜18:15</span></div>
+          <div class="all-row"><span class="all-flag flag-school">スクール</span><span class="us-badge badge-skillup">スキルアップ②</span><span>3〜6年</span><span>18:30〜19:45</span></div>
+        </div>
+        <div class="all-day-block">
+          <div class="all-day-title">火曜日</div>
+          <div class="all-row"><span class="all-flag flag-school">スクール</span><span class="us-badge badge-elite">エリート①</span><span>1〜3年</span><span>17:00〜18:15</span></div>
+          <div class="all-row"><span class="all-flag flag-school">スクール</span><span class="us-badge badge-elite">エリート②</span><span>4〜6年</span><span>18:30〜19:45</span></div>
+        </div>
+        <div class="all-day-block all-highlight">
+          <div class="all-day-title">水曜日</div>
+          <div class="all-row"><span class="all-flag flag-club">FC</span><span class="us-badge badge-club">クラブ</span><span>U-10全体</span><span>17:00〜18:15</span></div>
+        </div>
+        <div class="all-day-block">
+          <div class="all-day-title">土曜日</div>
+          <div class="all-row"><span class="all-flag flag-school">スクール</span><span class="us-badge badge-beginner">ビギナー①</span><span>幼児</span><span>16:00〜17:00</span></div>
+          <div class="all-row"><span class="all-flag flag-school">スクール</span><span class="us-badge badge-beginner">ビギナー②</span><span>1〜6年</span><span>17:15〜18:30</span></div>
+          <div class="all-row"><span class="all-flag flag-club">FC</span><span class="us-badge badge-club">クラブ</span><span>U-10全体</span><span>午前中（試合 or 練習）</span></div>
+        </div>
+        <div class="all-day-block">
+          <div class="all-day-title">日曜日</div>
+          <div class="all-row all-adjust"><span class="all-flag flag-school">スクール</span><span class="us-badge badge-elite">エリート①</span><span>1〜3年</span><span>17:20〜18:35 ※調整中</span></div>
+          <div class="all-row"><span class="all-flag flag-school">スクール</span><span class="us-badge badge-elite">エリート②</span><span>中学生以上</span><span>18:40〜19:55</span></div>
+          <div class="all-row"><span class="all-flag flag-club">FC</span><span class="us-badge badge-club">クラブ</span><span>U-10全体</span><span>午前中（試合 or 練習）</span></div>
+        </div>
+        <div class="all-day-block">
+          <div class="all-day-title">祝日</div>
+          <div class="all-row"><span class="all-flag flag-club">FC</span><span class="us-badge badge-club">クラブ</span><span>U-10全体</span><span>午前中（試合 or 練習）</span></div>
+        </div>
+      </div>
+      <div style="margin-top:20px;display:flex;gap:16px;flex-wrap:wrap">
+        <a href="school.html" class="btn-text" style="color:#aaa;font-weight:600">スクール詳細 →</a>
+        <a href="club.html" class="btn-text" style="color:var(--pink);font-weight:600">クラブ詳細 →</a>
+      </div>
     </div>
   </div>
 </div>
-<div class="sec" style="padding-top:0;background:var(--charcoal)">
-  <div class="sec-inner" style="padding:80px 0 0">
+
+<!-- 活動場所 -->
+<div class="sec" style="background:var(--charcoal)">
+  <div class="sec-inner">
     <span class="section-label reveal">Venue / 活動場所</span>
     <h2 class="sec-title reveal">主な<em>活動エリア</em>。</h2>
-    <div class="venue-grid">
-      <div class="venue-card reveal">
+    <div class="venue-grid reveal">
+      <div class="venue-card">
         <div class="vc-title">🏟️ 航空公園フットサルコート</div>
-        <div class="vc-body">埼玉県所沢市。水曜日のメイン活動場所。駐車場完備。最寄り駅：西武新宿線「航空公園」駅より徒歩15分。</div>
+        <div class="vc-body">埼玉県所沢市。水曜日のメイン活動場所。駐車場完備。<br>最寄り駅：西武新宿線・西武池袋線「航空公園」駅より徒歩約15分。</div>
       </div>
-      <div class="venue-card reveal d1">
-        <div class="vc-title">📍 週末・祝日の活動会場</div>
-        <div class="vc-body">土日祝の活動場所は、試合・練習内容に応じてご案内します。詳細はLINE・Instagramでもお知らせします。所沢・埼玉西部エリアを中心に活動予定。</div>
+      <div class="venue-card">
+        <div class="vc-title">📍 週末・祝日の会場</div>
+        <div class="vc-body">土日祝の活動場所は試合・練習内容に応じてご案内します。詳細はLINE・Instagramでもお知らせします。所沢・埼玉西部エリアを中心に活動予定。</div>
       </div>
+    </div>
+    <!-- Googleマップ -->
+    <div style="margin-top:40px">
+      <div style="font-size:11px;letter-spacing:2px;color:#666;margin-bottom:12px;text-transform:uppercase">最寄り駅 — 航空公園駅（西武新宿線・西武池袋線）</div>
+      <iframe
+        class="map-frame"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3229.849180574!2d139.4674193760!3d35.7893454723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60191f52b61fa8f7%3A0x4b83a56b3bebe305!2z6Iiq56eR5YWs5ZyS6aeF!5e0!3m2!1sja!2sjp!4v1710000000001!5m2!1sja!2sjp"
+        width="100%" height="380" style="border:1px solid rgba(255,255,255,0.06);display:block;filter:grayscale(20%)invert(85%)hue-rotate(180deg)"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="航空公園駅 Googleマップ">
+      </iframe>
+      <p style="font-size:11px;color:#666;margin-top:8px">※ 会場（航空公園フットサルコート）は航空公園駅より徒歩約15分です。</p>
     </div>
   </div>
 </div>
-<div style="padding:80px 48px;text-align:center;background:var(--charcoal)">
+
+<div style="padding:64px 48px;text-align:center;background:var(--charcoal)">
   <span class="section-label" style="text-align:center;display:block">お問い合わせ</span>
-  <p style="font-size:14px;color:var(--gray-light);margin-bottom:32px">スケジュールの詳細や変更はInstagramでもお知らせしています。</p>
+  <p style="font-size:14px;color:var(--gray-light);margin-bottom:32px">スケジュールの詳細・変更はInstagramでもお知らせしています。</p>
   <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
     <a href="contact.html" class="btn-primary">体験・お問い合わせ</a>
-    <a href="https://www.instagram.com/cloverty_fc" target="_blank" rel="noopener noreferrer" style="border:1px solid rgba(255,255,255,0.2);color:var(--white);padding:14px 36px;border-radius:2px;font-size:13px;letter-spacing:2px;text-decoration:none;text-transform:uppercase">Instagram を見る</a>
+    <a href="https://www.instagram.com/cloverty_fc" target="_blank" rel="noopener noreferrer" style="border:1px solid rgba(255,255,255,0.2);color:var(--white);padding:14px 36px;border-radius:2px;font-size:13px;letter-spacing:1px;text-decoration:none;display:inline-block">Instagram を見る</a>
   </div>
 </div>
 
@@ -648,6 +871,18 @@ footer{background:#080808;padding:40px 48px;border-top:1px solid rgba(255,255,25
   if(sl.length){var cur=0;function gt(i){sl[cur].classList.remove('active');if(sd[cur])sd[cur].classList.remove('active');cur=(i+sl.length)%sl.length;sl[cur].classList.add('active');if(sd[cur])sd[cur].classList.add('active');}
   var st=setInterval(function(){gt(cur+1);},4000);sd.forEach(function(d,i){d.addEventListener('click',function(){clearInterval(st);gt(i);st=setInterval(function(){gt(cur+1);},4000);});});}
 })();
+
+/* Schedule tabs */
+document.querySelectorAll('.stab').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    document.querySelectorAll('.stab').forEach(function(b){b.classList.remove('stab-active');});
+    document.querySelectorAll('.stab-content').forEach(function(c){c.style.display='none';});
+    btn.classList.add('stab-active');
+    var tab=document.getElementById('tab-'+btn.dataset.tab);
+    if(tab)tab.style.display='block';
+  });
+});
+
 </script>
 </body>
 </html>
