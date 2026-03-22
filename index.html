@@ -1119,8 +1119,8 @@ section + .sec-light {
 .hamburger.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
 .hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
 .hamburger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
-.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(6,6,6,0.99);z-index:200;flex-direction:column;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s ease;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:60px 0 48px}
-.mobile-menu.open{opacity:1}
+.mobile-menu{display:none!important;height:0!important;overflow:hidden!important;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(6,6,6,0.99);z-index:200;flex-direction:column;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s ease;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:60px 0 48px;visibility:hidden;pointer-events:none}
+.mobile-menu.open{opacity:1;visibility:visible;pointer-events:auto}
 .mobile-menu a{font-family:'Noto Sans JP',sans-serif;font-size:22px;font-weight:700;color:#f5f3ef;text-decoration:none;padding:18px 40px;width:100%;max-width:400px;text-align:center;letter-spacing:0.5px;transition:color 0.2s;border-bottom:1px solid rgba(255,255,255,0.07);display:block}
 .mobile-menu a:hover,.mobile-menu a.active{color:#e8709a}
 .mobile-menu .m-cta{margin-top:28px;background:#e8709a;color:#000;border-radius:2px;font-weight:900;padding:18px 52px;width:auto;max-width:320px;font-size:15px;border-bottom:none}
@@ -1154,7 +1154,7 @@ section + .sec-light {
   <button class="hamburger" id="hamburger" aria-label="メニューを開く"><span></span><span></span><span></span></button>
 </nav>
 
-<div class="mobile-menu" id="mobileMenu" style="display:none">
+<div class="mobile-menu" id="mobileMenu" style="display:none!important;height:0;overflow:hidden">
   <button class="mobile-close" id="mobileClose" aria-label="閉じる">✕</button>
   <a href="index.html" class="active">ホーム</a>
   <a href="school.html">スクール</a>
@@ -1258,7 +1258,7 @@ section + .sec-light {
     </div>
     <div class="qi-item">
       <div class="qi-label">エリア</div>
-      <div class="qi-value">所沢・埼玉西部<br><span>所沢・埼玉西部エリア</span></div>
+      <div class="qi-value">所沢・<span>埼玉西部</span><br>エリア</div>
     </div>
   </div>
 </section>
@@ -1425,7 +1425,7 @@ section + .sec-light {
 <section id="schedule-overview" class="sec sec-light">
   <div class="sec-inner">
     <span class="label reveal">Schedule / <span class="label-jp">活動日・時間・場所</span></span>
-    <h2 class="h2 reveal">所沢・航空公園エリアの<br>活動日・時間・<em>場所。</em></h2>
+    <h2 class="h2 reveal">所沢エリアの<br>活動日・時間・<em>場所。</em></h2>
     <div class="schedule-cards reveal">
       <div class="sc-card sc-wed">
         <div class="sc-day">水曜日</div>
