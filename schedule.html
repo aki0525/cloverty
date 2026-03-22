@@ -456,7 +456,7 @@ footer{background:#080808;padding:40px 48px;border-top:1px solid rgba(255,255,25
 .us-rows{display:flex;flex-direction:column;gap:2px}
 .us-row{display:grid;grid-template-columns:120px 1fr 1fr 80px;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.04)}
 .us-row:last-child{border-bottom:none}
-.us-row-adjust{border-left:2px solid rgba(220,80,80,0.5);padding-left:8px}
+.us-row-adjust{border-left:2px solid var(--pink);padding-left:8px;opacity:0.8}
 .us-badge{font-size:10px;font-weight:800;letter-spacing:1px;padding:3px 10px;border-radius:100px;text-align:center;display:inline-block;white-space:nowrap}
 .badge-beginner{background:rgba(255,255,255,0.08);color:#ccc}
 .badge-skillup{background:rgba(255,255,255,0.1);color:#fff}
@@ -479,16 +479,25 @@ footer{background:#080808;padding:40px 48px;border-top:1px solid rgba(255,255,25
 .cs-type{font-size:10px;letter-spacing:1px;padding:4px 12px;background:rgba(232,112,154,0.1);color:var(--pink);border-radius:2px;display:inline-block}
 /* All schedule */
 .all-sched-wrap{display:flex;flex-direction:column;gap:2px}
-.all-day-block{background:#111;padding:18px 24px}
-.all-highlight{border-left:2px solid var(--pink)}
-.all-day-title{font-size:10px;font-weight:800;letter-spacing:3px;color:#888;text-transform:uppercase;margin-bottom:10px}
-.all-row{display:grid;grid-template-columns:52px 96px 1fr 1fr;gap:8px;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:13px;color:#aaa}
+.all-day-block{background:#111;padding:16px 20px}
+.all-highlight{border-left:2px solid var(--pink);padding-left:12px}
+.all-day-title{font-size:11px;font-weight:800;letter-spacing:2px;color:var(--pink);text-transform:uppercase;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid rgba(232,112,154,0.2)}
+.all-row{display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:13px;color:#ccc;flex-wrap:nowrap}
 .all-row:last-child{border-bottom:none}
-.all-adjust{color:rgba(220,80,80,0.8)!important}
-.all-adjust span{color:rgba(220,80,80,0.8)!important}
-.all-flag{font-size:9px;font-weight:900;letter-spacing:1px;padding:3px 8px;border-radius:100px;text-align:center;display:inline-block;white-space:nowrap}
+.all-row-time{font-size:13px;font-weight:700;color:var(--white);min-width:100px;flex-shrink:0}
+.all-row-target{flex:1;color:#aaa;font-size:12px}
+.all-row-price{font-weight:900;color:var(--white);font-size:14px;min-width:64px;text-align:right;flex-shrink:0}
+.all-adjust .all-row-time,.all-adjust .all-row-target,.all-adjust .all-row-price{color:var(--pink)!important;opacity:0.8}
+.all-adjust .all-row-price{font-size:14px}
+.all-flag{font-size:9px;font-weight:900;letter-spacing:1px;padding:3px 8px;border-radius:100px;text-align:center;display:inline-block;white-space:nowrap;flex-shrink:0}
 .flag-school{background:rgba(255,255,255,0.1);color:#bbb}
 .flag-club{background:rgba(232,112,154,0.2);color:var(--pink)}
+.all-badge-wrap{flex-shrink:0}
+@media(max-width:600px){
+  .all-row{flex-wrap:wrap;gap:4px}
+  .all-row-time{min-width:auto}
+  .all-row-price{min-width:auto}
+}
 /* Responsive */
 @media(max-width:900px){
   .club-sched-grid{grid-template-columns:1fr 1fr}
@@ -645,6 +654,27 @@ footer{background:#080808;padding:40px 48px;border-top:1px solid rgba(255,255,25
 
 /* ページヒーローのem */
 .page-title em { color: var(--pink); }
+
+
+/* ════ LAYOUT PADDING FIX ═══════════════════════════════════════ */
+/* ヘッダー高さ分の余白を全ページで確保 */
+.page-hero, .page-hero-dark {
+  padding-top: 100px !important;
+}
+@media(max-width:768px){
+  .page-hero, .page-hero-dark {
+    padding-top: 88px !important;
+  }
+}
+/* ヘッダー右端配置の確認 */
+.header-inner {
+  justify-content: space-between !important;
+}
+/* hb-btn を常に右端に */
+.hb-btn {
+  margin-left: auto;
+  order: 99;
+}
 
 </style>
 </head>
@@ -831,33 +861,33 @@ footer{background:#080808;padding:40px 48px;border-top:1px solid rgba(255,255,25
       <div class="all-sched-wrap">
         <div class="all-day-block">
           <div class="all-day-title">月曜日</div>
-          <div class="all-row"><span class="all-flag flag-school">スクール</span><span class="us-badge badge-skillup">スキルアップ①</span><span>幼児〜2年</span><span>17:00〜18:15</span></div>
-          <div class="all-row"><span class="all-flag flag-school">スクール</span><span class="us-badge badge-skillup">スキルアップ②</span><span>3〜6年</span><span>18:30〜19:45</span></div>
+          <div class="all-row"><span class="all-flag flag-school">スクール</span><div class="all-badge-wrap"><span class="us-badge badge-skillup">スキルアップ①</span></div><div class="all-row-time">17:00〜18:15</div><div class="all-row-target"></div></div>
+          <div class="all-row"><span class="all-flag flag-school">スクール</span><div class="all-badge-wrap"><span class="us-badge badge-skillup">スキルアップ②</span></div><div class="all-row-time">18:30〜19:45</div><div class="all-row-target"></div></div>
         </div>
         <div class="all-day-block">
           <div class="all-day-title">火曜日</div>
-          <div class="all-row"><span class="all-flag flag-school">スクール</span><span class="us-badge badge-elite">エリート①</span><span>1〜3年</span><span>17:00〜18:15</span></div>
-          <div class="all-row"><span class="all-flag flag-school">スクール</span><span class="us-badge badge-elite">エリート②</span><span>4〜6年</span><span>18:30〜19:45</span></div>
+          <div class="all-row"><span class="all-flag flag-school">スクール</span><div class="all-badge-wrap"><span class="us-badge badge-elite">エリート①</span></div><div class="all-row-time">17:00〜18:15</div><div class="all-row-target"></div></div>
+          <div class="all-row"><span class="all-flag flag-school">スクール</span><div class="all-badge-wrap"><span class="us-badge badge-elite">エリート②</span></div><div class="all-row-time">18:30〜19:45</div><div class="all-row-target"></div></div>
         </div>
         <div class="all-day-block all-highlight">
           <div class="all-day-title">水曜日</div>
-          <div class="all-row"><span class="all-flag flag-club">FC</span><span class="us-badge badge-club">クラブ</span><span>U-10全体</span><span>17:00〜18:15</span></div>
+          <div class="all-row"><span class="all-flag flag-club">FC</span><div class="all-badge-wrap"><span class="us-badge badge-club">クラブ</span></div><div class="all-row-time">17:00〜18:15</div><div class="all-row-target">U-10全体</div></div>
         </div>
         <div class="all-day-block">
           <div class="all-day-title">土曜日</div>
-          <div class="all-row"><span class="all-flag flag-school">スクール</span><span class="us-badge badge-beginner">ビギナー①</span><span>幼児</span><span>16:00〜17:00</span></div>
-          <div class="all-row"><span class="all-flag flag-school">スクール</span><span class="us-badge badge-beginner">ビギナー②</span><span>1〜6年</span><span>17:15〜18:30</span></div>
-          <div class="all-row"><span class="all-flag flag-club">FC</span><span class="us-badge badge-club">クラブ</span><span>U-10全体</span><span>午前中（試合 or 練習）</span></div>
+          <div class="all-row"><span class="all-flag flag-school">スクール</span><div class="all-badge-wrap"><span class="us-badge badge-beginner">ビギナー①</span></div><div class="all-row-time">16:00〜17:00</div><div class="all-row-target">幼児</div></div>
+          <div class="all-row"><span class="all-flag flag-school">スクール</span><div class="all-badge-wrap"><span class="us-badge badge-beginner">ビギナー②</span></div><div class="all-row-time">17:15〜18:30</div><div class="all-row-target"></div></div>
+          <div class="all-row"><span class="all-flag flag-club">FC</span><div class="all-badge-wrap"><span class="us-badge badge-club">クラブ</span></div><div class="all-row-time">午前中（試合 or 練習）</div><div class="all-row-target">U-10全体</div></div>
         </div>
         <div class="all-day-block">
           <div class="all-day-title">日曜日</div>
-          <div class="all-row all-adjust"><span class="all-flag flag-school">スクール</span><span class="us-badge badge-elite">エリート①</span><span>1〜3年</span><span>17:20〜18:35 ※調整中</span></div>
-          <div class="all-row"><span class="all-flag flag-school">スクール</span><span class="us-badge badge-elite">エリート②</span><span>中学生以上</span><span>18:40〜19:55</span></div>
-          <div class="all-row"><span class="all-flag flag-club">FC</span><span class="us-badge badge-club">クラブ</span><span>U-10全体</span><span>午前中（試合 or 練習）</span></div>
+          <div class="all-row all-adjust"><span class="all-flag flag-school">スクール</span><div class="all-badge-wrap"><span class="us-badge badge-elite">エリート①</span></div><div class="all-row-time">17:20〜18:35 ※調整中</div><div class="all-row-target"></div></div>
+          <div class="all-row"><span class="all-flag flag-school">スクール</span><div class="all-badge-wrap"><span class="us-badge badge-elite">エリート②</span></div><div class="all-row-time">18:40〜19:55</div><div class="all-row-target">中学生以上</div></div>
+          <div class="all-row"><span class="all-flag flag-club">FC</span><div class="all-badge-wrap"><span class="us-badge badge-club">クラブ</span></div><div class="all-row-time">午前中（試合 or 練習）</div><div class="all-row-target">U-10全体</div></div>
         </div>
         <div class="all-day-block">
           <div class="all-day-title">祝日</div>
-          <div class="all-row"><span class="all-flag flag-club">FC</span><span class="us-badge badge-club">クラブ</span><span>U-10全体</span><span>午前中（試合 or 練習）</span></div>
+          <div class="all-row"><span class="all-flag flag-club">FC</span><div class="all-badge-wrap"><span class="us-badge badge-club">クラブ</span></div><div class="all-row-time">午前中（試合 or 練習）</div><div class="all-row-target">U-10全体</div></div>
         </div>
       </div>
       <div style="margin-top:20px;display:flex;gap:16px;flex-wrap:wrap">

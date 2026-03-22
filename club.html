@@ -801,6 +801,40 @@ footer{background:#080808;padding:40px 48px;border-top:1px solid rgba(255,255,25
 /* ページヒーローのem */
 .page-title em { color: var(--pink); }
 
+
+/* ── Club Schedule Mobile Fix ── */
+@media(max-width:600px){
+  .cs-grid-4{grid-template-columns:1fr!important}
+  .cs-c{padding:20px 16px}
+  .cs-c-time{font-size:20px}
+}
+/* ── Entry Card Mobile Fix ── */
+.ec-card{background:var(--charcoal);padding:28px;margin-bottom:2px}
+.ec-label{font-size:10px;letter-spacing:2px;color:var(--pink);margin-bottom:8px;font-weight:700}
+.ec-title{font-size:18px;font-weight:800;margin-bottom:12px;color:var(--white)}
+.ec-body{font-size:13px;color:var(--gray-light);line-height:2}
+
+
+/* ════ LAYOUT PADDING FIX ═══════════════════════════════════════ */
+/* ヘッダー高さ分の余白を全ページで確保 */
+.page-hero, .page-hero-dark {
+  padding-top: 100px !important;
+}
+@media(max-width:768px){
+  .page-hero, .page-hero-dark {
+    padding-top: 88px !important;
+  }
+}
+/* ヘッダー右端配置の確認 */
+.header-inner {
+  justify-content: space-between !important;
+}
+/* hb-btn を常に右端に */
+.hb-btn {
+  margin-left: auto;
+  order: 99;
+}
+
 </style>
 </head>
 <body>
@@ -841,7 +875,7 @@ footer{background:#080808;padding:40px 48px;border-top:1px solid rgba(255,255,25
 <div class="uniform-color-bar"><div class="ucb-pink"></div><div class="ucb-navy"></div><div class="ucb-white"></div><div class="ucb-gray"></div></div>
 <div class="page-hero">
   <div class="hero-inner">
-    <div class="new-badge"><span></span>2026年4月 新設</div>
+    <div class="new-badge" style="background:rgba(232,112,154,0.2);border:1px solid var(--pink);color:var(--pink);font-size:11px;font-weight:700;letter-spacing:1px;padding:6px 16px;border-radius:100px;display:inline-flex;align-items:center;gap:8px;margin-bottom:20px"><span></span>2026年4月 新設</div>
     <span class="section-label">Club Team / クラブチーム</span>
     <h1 class="page-title">自分で<em>プレーを<br>決められる</em><br>選手へ。</h1>
     <p class="page-desc">試合・大会を通じて、実戦経験を積みながら成長するクラスです。<br>主に小学4年生以下（U-10）対象。コーチ推薦制での参加となります。</p>

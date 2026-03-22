@@ -672,6 +672,27 @@ footer{background:#080808;padding:40px 48px;border-top:1px solid rgba(255,255,25
 /* ページヒーローのem */
 .page-title em { color: var(--pink); }
 
+
+/* ════ LAYOUT PADDING FIX ═══════════════════════════════════════ */
+/* ヘッダー高さ分の余白を全ページで確保 */
+.page-hero, .page-hero-dark {
+  padding-top: 100px !important;
+}
+@media(max-width:768px){
+  .page-hero, .page-hero-dark {
+    padding-top: 88px !important;
+  }
+}
+/* ヘッダー右端配置の確認 */
+.header-inner {
+  justify-content: space-between !important;
+}
+/* hb-btn を常に右端に */
+.hb-btn {
+  margin-left: auto;
+  order: 99;
+}
+
 </style>
 </head>
 <body>
