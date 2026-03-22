@@ -653,6 +653,14 @@ textarea.cf-input { resize: vertical; min-height: 100px; }
   order: 99;
 }
 
+
+/* ════ HAMBURGER Z-INDEX FIX ═════════════════════════════════════ */
+.hb-btn { z-index: 10001; }
+.sp-menu { z-index: 10000; }
+.site-header { z-index: 1000; }
+/* open時のtransitionを確実に */
+.sp-menu.is-open { display: flex; opacity: 1; }
+
 </style>
 </head>
 <body>
