@@ -56,6 +56,12 @@ nav#navbar{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-it
 .nav-cta::after{display:none!important}
 
 /* ── HAMBURGER ── */
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:6px;cursor:pointer;padding:8px 6px;background:none;border:none;z-index:300;-webkit-tap-highlight-color:transparent;flex-shrink:0}
+.hamburger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;transition:transform 0.3s ease,opacity 0.3s ease,background 0.2s}
+.hamburger:hover span{background:var(--pink)}
+.hamburger.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hamburger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
 
 /* ── MOBILE MENU ── */
 /* ── FLOAT CTA ── */
@@ -317,7 +323,7 @@ footer.footer-full{background:#080808;padding:56px 48px 36px;border-top:1px soli
 @media(max-width:1024px){
   nav#navbar{padding:14px 20px}
   .nav-links{display:none!important}
-  
+  .hamburger{display:flex!important}
   .float-cta{display:block}
   #hero{padding:0 24px;min-height:auto;align-items:flex-start}
   .hero-wrap{padding-top:90px;gap:0}
@@ -376,6 +382,7 @@ footer.footer-full{background:#080808;padding:56px 48px 36px;border-top:1px soli
   .gallery-item{width:80vw;height:200px}
   .gallery-item:first-child{width:90vw}
 }
+
 
 /* ══ PAGE-SPECIFIC CSS ══ */
 
@@ -568,7 +575,7 @@ footer{background:#080808;padding:40px 48px;border-top:1px solid rgba(255,255,25
 @media (max-width: 1024px) {
   nav { padding: 16px 20px; }
   .nav-links { display: none; }
-  
+  .hamburger { display: flex; }
   .page-hero { padding: 100px 28px 56px; }
   section.content, .sec { padding: 64px 28px; }
 }
@@ -667,52 +674,29 @@ footer{background:#080808;padding:40px 48px;border-top:1px solid rgba(255,255,25
 .ucb-white { flex: 1; background: #fff; }
 .ucb-gray  { flex: 1; background: var(--club-gray); }
 
-/* ── Mobile Menu ── */
 
+/* ── Mobile Menu ── */
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:6px;cursor:pointer;padding:8px 6px;background:none;border:none;z-index:300;-webkit-tap-highlight-color:transparent;flex-shrink:0}
+.hamburger span{display:block;width:24px;height:2px;background:#f5f3ef;border-radius:2px;transition:transform 0.3s ease,opacity 0.3s ease}
+.hamburger:hover span{background:#e8709a}
+.hamburger.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hamburger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(6,6,6,0.99);z-index:200;flex-direction:column;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s ease;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:60px 0 48px}
+.mobile-menu.open{opacity:1}
+.mobile-menu a{font-family:'Noto Sans JP',sans-serif;font-size:22px;font-weight:700;color:#f5f3ef;text-decoration:none;padding:18px 40px;width:100%;max-width:400px;text-align:center;letter-spacing:0.5px;transition:color 0.2s;border-bottom:1px solid rgba(255,255,255,0.07);display:block}
+.mobile-menu a:hover,.mobile-menu a.active{color:#e8709a}
+.mobile-menu .m-cta{margin-top:28px;background:#e8709a;color:#000;border-radius:2px;font-weight:900;padding:18px 52px;width:auto;max-width:320px;font-size:15px;border-bottom:none}
+.mobile-menu .m-cta:hover{background:#c8547e}
+.mobile-close{position:fixed;top:20px;right:20px;font-size:32px;color:rgba(255,255,255,0.6);cursor:pointer;background:none;border:none;line-height:1;padding:4px 8px;transition:color 0.2s;z-index:201;width:44px;height:44px;display:flex;align-items:center;justify-content:center}
+.mobile-close:hover{color:#fff}
 .float-cta{position:fixed;bottom:22px;right:16px;z-index:190;background:#e8709a;color:#000;padding:13px 18px;border-radius:2px;font-weight:800;font-size:12px;letter-spacing:0.3px;text-decoration:none;box-shadow:0 4px 20px rgba(232,112,154,0.5);transition:transform 0.2s,opacity 0.3s,box-shadow 0.2s;opacity:0;pointer-events:none;white-space:nowrap;display:none}
 .float-cta.visible{opacity:1;pointer-events:auto}
 .float-cta:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(232,112,154,0.55)}
 @media(max-width:1024px){
   .nav-links{display:none!important}
-  
+  .hamburger{display:flex!important}
   .float-cta{display:block}
-}
-
-.cs-grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(255,255,255,0.04);margin-top:32px}
-.cs-c{background:#111;padding:28px 20px;border-top:2px solid rgba(255,255,255,0.06);transition:border-color 0.2s}
-.cs-c-main{border-top-color:#e8709a}
-.cs-c:hover{border-top-color:rgba(232,112,154,0.4)}
-.cs-c-day{font-size:16px;font-weight:800;color:#fff;margin-bottom:8px}
-.cs-c-time{font-size:18px;font-weight:700;color:#e8709a;margin-bottom:6px}
-.cs-c-venue{font-size:12px;color:#888;line-height:1.7;margin-bottom:10px}
-.cs-c-venue span{color:#555;font-size:11px}
-.cs-c-badge{font-size:10px;letter-spacing:1px;padding:4px 12px;background:rgba(232,112,154,0.1);color:#e8709a;border-radius:2px;display:inline-block}
-@media(max-width:768px){.cs-grid-4{grid-template-columns:1fr 1fr}}
-@media(max-width:400px){.cs-grid-4{grid-template-columns:1fr}}
-
-/* header-nav-mobile-fix */
-@media (max-width: 1024px){
-  nav{padding:14px 16px;gap:12px;align-items:center;flex-wrap:wrap}
-  .nav-logo{flex-shrink:0}
-  .nav-links{
-    display:flex !important;
-    order:3;
-    width:100%;
-    gap:12px;
-    overflow-x:auto;
-    white-space:nowrap;
-    -webkit-overflow-scrolling:touch;
-    scrollbar-width:none;
-    padding:8px 2px 2px;
-    margin:0;
-  }
-  .nav-links::-webkit-scrollbar{display:none}
-  .nav-links li{flex:0 0 auto}
-  .nav-links a{
-    font-size:12px;
-    letter-spacing:1px;
-    padding:8px 0;
-  }
 }
 
 </style>
@@ -730,7 +714,21 @@ footer{background:#080808;padding:40px 48px;border-top:1px solid rgba(255,255,25
     <li><a href="access.html">アクセス</a></li>
     <li><a href="contact.html" class="nav-cta">無料体験</a></li>
   </ul>
+  <button class="hamburger" id="hamburger" aria-label="メニューを開く"><span></span><span></span><span></span></button>
 </nav>
+
+<div class="mobile-menu" id="mobileMenu" style="display:none">
+  <button class="mobile-close" id="mobileClose" aria-label="閉じる">✕</button>
+  <a href="index.html">ホーム</a>
+  <a href="school.html">スクール</a>
+  <a href="club.html" class="active">クラブ U-10</a>
+  <a href="fees.html">料金</a>
+  <a href="schedule.html">スケジュール</a>
+  <a href="coaches.html">コーチ</a>
+  <a href="access.html">アクセス</a>
+  <a href="contact.html" class="m-cta">無料体験</a>
+</div>
+
 <div class="uniform-color-bar"><div class="ucb-pink"></div><div class="ucb-navy"></div><div class="ucb-white"></div><div class="ucb-gray"></div></div>
 <div class="page-hero">
   <div class="hero-inner">
@@ -800,46 +798,6 @@ footer{background:#080808;padding:40px 48px;border-top:1px solid rgba(255,255,25
   </div>
 </div>
 
-<!-- クラブスケジュール -->
-<div class="sec" style="background:#0c0c0c;padding-top:0">
-  <div class="sec-inner" style="padding-top:72px">
-    <span class="section-label reveal" style="color:var(--club-pink, #e8709a)">Schedule / 活動スケジュール</span>
-    <h2 class="sec-title reveal">週3〜4日、<em>実戦で成長する。</em></h2>
-    <div class="cs-grid-4 reveal">
-      <div class="cs-c cs-c-main">
-        <div class="cs-c-day">水曜日</div>
-        <div class="cs-c-time">17:00〜18:15</div>
-        <div class="cs-c-venue">航空公園フットサルコート<br><span>（会場は都度ご案内）</span></div>
-        <div class="cs-c-badge">トレーニング</div>
-      </div>
-      <div class="cs-c">
-        <div class="cs-c-day">土曜日</div>
-        <div class="cs-c-time">午前中予定</div>
-        <div class="cs-c-venue">グラウンド確保状況・<br>対戦相手により変動</div>
-        <div class="cs-c-badge">試合 または 練習</div>
-      </div>
-      <div class="cs-c">
-        <div class="cs-c-day">日曜日</div>
-        <div class="cs-c-time">午前中予定</div>
-        <div class="cs-c-venue">グラウンド確保状況・<br>対戦相手により変動</div>
-        <div class="cs-c-badge">試合 または 練習</div>
-      </div>
-      <div class="cs-c">
-        <div class="cs-c-day">祝日</div>
-        <div class="cs-c-time">午前中予定</div>
-        <div class="cs-c-venue">会場・日程は都度案内</div>
-        <div class="cs-c-badge">試合 または 練習</div>
-      </div>
-    </div>
-    <p style="font-size:11px;color:#555;margin-top:16px;line-height:1.9">
-      ※ 土日祝の時間はグラウンド確保・対戦相手により変動します。<br>
-      ※ 月謝：¥11,000〜¥14,500（参加プランによる）<br>
-      ※ 入会金¥6,000（スクール生は¥0）/ 年会費¥12,000 / スポーツ保険¥1,100
-    </p>
-    <div style="margin-top:24px"><a href="schedule.html" class="btn-text" style="color:var(--club-pink, #e8709a);font-weight:600">全体スケジュールを見る →</a></div>
-  </div>
-</div>
-
 <!-- チームルール -->
 <div class="sec" style="padding-top:0;background:var(--charcoal)">
   <div class="sec-inner">
@@ -872,6 +830,7 @@ footer{background:#080808;padding:40px 48px;border-top:1px solid rgba(255,255,25
     </div>
   </div>
 </div>
+
 
 <!-- 試合写真 -->
 <div class="sec" style="background:var(--black)">
@@ -1016,6 +975,52 @@ footer{background:#080808;padding:40px 48px;border-top:1px solid rgba(255,255,25
 <script>
 (function(){
   /* ── Hamburger ── */
+  var btn=document.getElementById('hamburger');
+  var menu=document.getElementById('mobileMenu');
+  if(btn&&menu){
+    var closeBtn=document.getElementById('mobileClose');
+    function openMenu(){
+      menu.style.display='flex';
+      requestAnimationFrame(function(){requestAnimationFrame(function(){menu.classList.add('open');});});
+      btn.classList.add('open');
+      document.body.style.overflow='hidden';
+    }
+    function closeMenu(){
+      menu.classList.remove('open');
+      btn.classList.remove('open');
+      document.body.style.overflow='';
+      setTimeout(function(){if(!menu.classList.contains('open'))menu.style.display='none';},310);
+    }
+    btn.addEventListener('click',openMenu);
+    if(closeBtn)closeBtn.addEventListener('click',closeMenu);
+    menu.addEventListener('click',function(e){if(e.target===menu)closeMenu();});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMenu();});
+  }
+  /* ── Float CTA ── */
+  var fc=document.getElementById('floatCta');
+  if(fc)window.addEventListener('scroll',function(){fc.classList.toggle('visible',window.scrollY>380);},{passive:true});
+  /* ── Reveal ── */
+  var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('visible');});},{threshold:0.08});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  /* ── Nav bg ── */
+  var nav=document.getElementById('navbar');
+  if(nav)window.addEventListener('scroll',function(){nav.style.background=window.scrollY>60?'rgba(10,10,10,0.99)':'rgba(12,12,12,0.96)';},{passive:true});
+  /* ── FAQ ── */
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var q=item.querySelector('.faq-q');
+    if(q)q.addEventListener('click',function(){var w=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(function(el){el.classList.remove('open');});if(!w)item.classList.add('open');});
+  });
+  /* ── Gallery ── */
+  var gr=document.getElementById('galleryRow'),gp=document.getElementById('galleryPrev'),gn=document.getElementById('galleryNext'),gd=document.querySelectorAll('.gallery-dot');
+  if(gr&&gp&&gn){function ga(){var i=gr.querySelector('.gallery-item');return i?i.offsetWidth+4:340;}
+  gn.addEventListener('click',function(){gr.scrollBy({left:ga(),behavior:'smooth'});});
+  gp.addEventListener('click',function(){gr.scrollBy({left:-ga(),behavior:'smooth'});});
+  gr.addEventListener('scroll',function(){var items=gr.querySelectorAll('.gallery-item'),idx=0;items.forEach(function(x,i){if(x.offsetLeft<=gr.scrollLeft+10)idx=i;});gd.forEach(function(d,i){d.classList.toggle('active',i===idx);});},{passive:true});}
+  /* ── Slideshow ── */
+  var sl=document.querySelectorAll('.hero-slide'),sd=document.querySelectorAll('.slide-dot');
+  if(sl.length){var cur=0;function gt(i){sl[cur].classList.remove('active');if(sd[cur])sd[cur].classList.remove('active');cur=(i+sl.length)%sl.length;sl[cur].classList.add('active');if(sd[cur])sd[cur].classList.add('active');}
+  var st=setInterval(function(){gt(cur+1);},4000);sd.forEach(function(d,i){d.addEventListener('click',function(){clearInterval(st);gt(i);st=setInterval(function(){gt(cur+1);},4000);});});}
+})();
 </script>
 </body>
 </html>
