@@ -435,8 +435,8 @@ footer{background:#080808;padding:40px 48px;border-top:1px solid rgba(255,255,25
 .hamburger.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
 .hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
 .hamburger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
-.mobile-menu{display:none!important;height:0!important;overflow:hidden!important;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(6,6,6,0.99);z-index:200;flex-direction:column;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s ease;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:60px 0 48px;visibility:hidden;pointer-events:none}
-.mobile-menu.open{opacity:1;visibility:visible;pointer-events:auto}
+.mobile-menu{display:none!important;height:0!important;overflow:hidden!important;visibility:hidden!important;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(6,6,6,0.99);z-index:200;flex-direction:column;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s ease;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:60px 0 48px;visibility:hidden;pointer-events:none}
+.mobile-menu.open{opacity:1;visibility:visible;pointer-events:auto;display:flex!important;height:auto!important}
 .mobile-menu a{font-family:'Noto Sans JP',sans-serif;font-size:22px;font-weight:700;color:#f5f3ef;text-decoration:none;padding:18px 40px;width:100%;max-width:400px;text-align:center;letter-spacing:0.5px;transition:color 0.2s;border-bottom:1px solid rgba(255,255,255,0.07);display:block}
 .mobile-menu a:hover,.mobile-menu a.active{color:#e8709a}
 .mobile-menu .m-cta{margin-top:28px;background:#e8709a;color:#000;border-radius:2px;font-weight:900;padding:18px 52px;width:auto;max-width:320px;font-size:15px;border-bottom:none}
@@ -454,6 +454,8 @@ footer{background:#080808;padding:40px 48px;border-top:1px solid rgba(255,255,25
 
 
 /* ── Schedule Tabs ── */
+.stab-content { display: none !important; }
+.stab-content.tab-visible { display: block !important; }
 .sched-tabs{display:flex;gap:2px;margin-bottom:32px;background:rgba(255,255,255,0.04);padding:4px;border-radius:2px;flex-wrap:wrap}
 .stab{flex:1;padding:12px 16px;background:none;border:none;color:#888;font-family:'Noto Sans JP',sans-serif;font-size:13px;font-weight:600;cursor:pointer;border-radius:1px;transition:background 0.2s,color 0.2s;white-space:nowrap;letter-spacing:0.5px}
 .stab:hover{color:#fff}
@@ -555,8 +557,8 @@ footer{background:#080808;padding:40px 48px;border-top:1px solid rgba(255,255,25
 <div class="page-hero">
   <div class="hero-inner">
     <span class="section-label">Schedule / スケジュール</span>
-    <h1 class="page-title">週4日の<br><em>充実した</em><br>活動環境。</h1>
-    <p class="page-desc">水曜・土曜・日曜・祝日を中心に活動。トレーニングと試合をバランスよく組み合わせます。</p>
+    <h1 class="page-title">スクールと<br><em>クラブ</em>の<br>活動日程。</h1>
+    <p class="page-desc">CLOVERTY SOCCER SCHOOLは月・火・土・日、CLOVERTY FC U-10は水・土・日・祝日に活動しています。</p>
   </div>
 </div>
 <div class="sec">
@@ -660,7 +662,7 @@ footer{background:#080808;padding:40px 48px;border-top:1px solid rgba(255,255,25
     </div>
 
     <!-- ─── クラブ ─── -->
-    <div class="stab-content" id="tab-club" style="display:none">
+    <div class="stab-content" id="tab-club">
       <div class="sched-category-head">
         <div class="sch-cat-label club-cat">CLOVERTY FC U-10</div>
         <p class="sch-cat-desc">コーチ推薦制。試合・トレーニングを週3〜4回実施。水・土・日・祝日が活動日。</p>
@@ -696,7 +698,7 @@ footer{background:#080808;padding:40px 48px;border-top:1px solid rgba(255,255,25
     </div>
 
     <!-- ─── 全体一覧 ─── -->
-    <div class="stab-content" id="tab-all" style="display:none">
+    <div class="stab-content" id="tab-all">
       <div class="all-sched-wrap">
         <div class="all-day-block">
           <div class="all-day-title">月曜日</div>
@@ -873,15 +875,21 @@ footer{background:#080808;padding:40px 48px;border-top:1px solid rgba(255,255,25
 })();
 
 /* Schedule tabs */
-document.querySelectorAll('.stab').forEach(function(btn){
-  btn.addEventListener('click',function(){
-    document.querySelectorAll('.stab').forEach(function(b){b.classList.remove('stab-active');});
-    document.querySelectorAll('.stab-content').forEach(function(c){c.style.display='none';});
-    btn.classList.add('stab-active');
-    var tab=document.getElementById('tab-'+btn.dataset.tab);
-    if(tab)tab.style.display='block';
+(function(){
+  // 初期状態: 最初のタブのみ表示
+  var first = document.getElementById('tab-school');
+  if(first) first.classList.add('tab-visible');
+  
+  document.querySelectorAll('.stab').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.stab').forEach(function(b){ b.classList.remove('stab-active'); });
+      document.querySelectorAll('.stab-content').forEach(function(c){ c.classList.remove('tab-visible'); });
+      btn.classList.add('stab-active');
+      var tab = document.getElementById('tab-' + btn.dataset.tab);
+      if(tab) tab.classList.add('tab-visible');
+    });
   });
-});
+})();
 
 </script>
 </body>
