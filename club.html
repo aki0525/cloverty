@@ -699,6 +699,19 @@ footer{background:#080808;padding:40px 48px;border-top:1px solid rgba(255,255,25
   .float-cta{display:block}
 }
 
+
+.cs-grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(255,255,255,0.04);margin-top:32px}
+.cs-c{background:#111;padding:28px 20px;border-top:2px solid rgba(255,255,255,0.06);transition:border-color 0.2s}
+.cs-c-main{border-top-color:#e8709a}
+.cs-c:hover{border-top-color:rgba(232,112,154,0.4)}
+.cs-c-day{font-size:16px;font-weight:800;color:#fff;margin-bottom:8px}
+.cs-c-time{font-size:18px;font-weight:700;color:#e8709a;margin-bottom:6px}
+.cs-c-venue{font-size:12px;color:#888;line-height:1.7;margin-bottom:10px}
+.cs-c-venue span{color:#555;font-size:11px}
+.cs-c-badge{font-size:10px;letter-spacing:1px;padding:4px 12px;background:rgba(232,112,154,0.1);color:#e8709a;border-radius:2px;display:inline-block}
+@media(max-width:768px){.cs-grid-4{grid-template-columns:1fr 1fr}}
+@media(max-width:400px){.cs-grid-4{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -795,6 +808,46 @@ footer{background:#080808;padding:40px 48px;border-top:1px solid rgba(255,255,25
         <div class="vs-body">個の成長を土台に、試合で"勝ち切る力"を身につけるクラブへ。強豪クラブ・部活へ胸を張って進める育成環境。</div>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- クラブスケジュール -->
+<div class="sec" style="background:#0c0c0c;padding-top:0">
+  <div class="sec-inner" style="padding-top:72px">
+    <span class="section-label reveal" style="color:var(--club-pink, #e8709a)">Schedule / 活動スケジュール</span>
+    <h2 class="sec-title reveal">週3〜4日、<em>実戦で成長する。</em></h2>
+    <div class="cs-grid-4 reveal">
+      <div class="cs-c cs-c-main">
+        <div class="cs-c-day">水曜日</div>
+        <div class="cs-c-time">17:00〜18:15</div>
+        <div class="cs-c-venue">航空公園フットサルコート<br><span>（会場は都度ご案内）</span></div>
+        <div class="cs-c-badge">トレーニング</div>
+      </div>
+      <div class="cs-c">
+        <div class="cs-c-day">土曜日</div>
+        <div class="cs-c-time">午前中予定</div>
+        <div class="cs-c-venue">グラウンド確保状況・<br>対戦相手により変動</div>
+        <div class="cs-c-badge">試合 または 練習</div>
+      </div>
+      <div class="cs-c">
+        <div class="cs-c-day">日曜日</div>
+        <div class="cs-c-time">午前中予定</div>
+        <div class="cs-c-venue">グラウンド確保状況・<br>対戦相手により変動</div>
+        <div class="cs-c-badge">試合 または 練習</div>
+      </div>
+      <div class="cs-c">
+        <div class="cs-c-day">祝日</div>
+        <div class="cs-c-time">午前中予定</div>
+        <div class="cs-c-venue">会場・日程は都度案内</div>
+        <div class="cs-c-badge">試合 または 練習</div>
+      </div>
+    </div>
+    <p style="font-size:11px;color:#555;margin-top:16px;line-height:1.9">
+      ※ 土日祝の時間はグラウンド確保・対戦相手により変動します。<br>
+      ※ 月謝：¥11,000〜¥14,500（参加プランによる）<br>
+      ※ 入会金¥6,000（スクール生は¥0）/ 年会費¥12,000 / スポーツ保険¥1,100
+    </p>
+    <div style="margin-top:24px"><a href="schedule.html" class="btn-text" style="color:var(--club-pink, #e8709a);font-weight:600">全体スケジュールを見る →</a></div>
   </div>
 </div>
 
