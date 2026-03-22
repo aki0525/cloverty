@@ -63,15 +63,6 @@ nav#navbar{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-it
 .hamburger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
 
 /* ── MOBILE MENU ── */
-.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(6,6,6,0.99);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:0;opacity:0;transition:opacity 0.3s ease;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:60px 0 48px}
-.mobile-menu.open{opacity:1}
-.mobile-menu a{font-family:'Noto Sans JP',sans-serif!important;font-size:22px!important;font-weight:700!important;color:var(--white)!important;text-decoration:none!important;padding:18px 40px!important;width:100%!important;max-width:400px!important;text-align:center!important;letter-spacing:0.5px!important;transition:color 0.2s!important;border-bottom:1px solid rgba(255,255,255,0.07)!important;display:block!important}
-.mobile-menu a:hover,.mobile-menu a.active{color:var(--pink)!important}
-.mobile-menu .m-cta{margin-top:28px!important;background:var(--pink)!important;color:#000!important;border-radius:2px!important;font-weight:900!important;padding:18px 52px!important;width:auto!important;max-width:320px!important;font-size:15px!important;border-bottom:none!important}
-.mobile-menu .m-cta:hover{background:var(--pink-dark)!important}
-.mobile-close{position:fixed;top:20px;right:20px;font-size:32px;color:rgba(255,255,255,0.6);cursor:pointer;background:none;border:none;line-height:1;padding:4px 8px;transition:color 0.2s;z-index:201;width:44px;height:44px;display:flex;align-items:center;justify-content:center}
-.mobile-close:hover{color:var(--white)}
-
 /* ── FLOAT CTA ── */
 .float-cta{position:fixed;bottom:22px;right:16px;z-index:190;background:var(--pink);color:#000!important;padding:13px 18px;border-radius:2px;font-weight:800;font-size:12px;letter-spacing:0.3px;text-decoration:none!important;box-shadow:0 4px 20px rgba(232,112,154,0.5);transition:transform 0.2s,opacity 0.3s,box-shadow 0.2s;opacity:0;pointer-events:none;white-space:nowrap;display:none}
 .float-cta.visible{opacity:1;pointer-events:auto}
@@ -269,9 +260,9 @@ nav#navbar{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-it
 .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:48px}
 .faq-list{display:flex;flex-direction:column}
 .faq-item{border-bottom:1px solid rgba(0,0,0,0.09)}
-.faq-q{font-size:14px;font-weight:700;color:#111;padding:18px 0;display:flex;gap:12px;justify-content:space-between;cursor:pointer;user-select:none;align-items:flex-start;transition:color 0.2s}
+.faq-q{font-size:14px;font-weight:700;color:#111;padding:18px 0;display:flex;gap:12px;justify-content:flex-start;cursor:pointer;user-select:none;align-items:flex-start;transition:color 0.2s}
 .faq-q:hover{color:var(--pink-dark)}
-.faq-q-text{display:flex;gap:12px;align-items:flex-start}
+.faq-q-text{display:flex;gap:12px;align-items:flex-start;flex:1;min-width:0}
 .faq-q-text::before{content:'Q';color:var(--pink-dark);font-weight:800;flex-shrink:0}
 .faq-icon{flex-shrink:0;font-size:18px;line-height:1;color:#666;transition:transform 0.25s;margin-top:1px}
 .faq-item.open .faq-icon{transform:rotate(45deg);color:var(--pink-dark)}
@@ -432,7 +423,7 @@ select.form-input{cursor:pointer}
 /* faq */
 .faq-list{margin-top:40px}
 .faq-item{border-bottom:1px solid rgba(255,255,255,0.06);padding:20px 0}
-.faq-q{font-size:14px;font-weight:500;color:var(--white);margin-bottom:10px;display:flex;gap:12px;align-items:flex-start}
+.faq-q{font-size:14px;font-weight:500;color:var(--white);margin-bottom:10px;display:flex;gap:12px;align-items:flex-start;justify-content:flex-start}
 .faq-q::before{content:'Q.';color:var(--pink);font-weight:700;flex-shrink:0}
 .faq-a{font-size:13px;color:var(--gray-light);line-height:1.9;padding-left:26px}
 
@@ -508,6 +499,7 @@ textarea.cf-input { resize: vertical; min-height: 100px; }
   </ul>
   <button class="hamburger" id="hamburger" aria-label="メニューを開く"><span></span><span></span><span></span></button>
 </nav>
+
 <div class="mobile-menu" id="mobileMenu" style="display:none">
   <button class="mobile-close" id="mobileClose" aria-label="閉じる">✕</button>
   <a href="index.html">ホーム</a>
@@ -750,32 +742,49 @@ textarea.cf-input { resize: vertical; min-height: 100px; }
 <a href="contact.html" class="float-cta" id="floatCta">無料体験に参加する</a>
 <script>
 (function(){
-  var btn=document.getElementById('hamburger'),menu=document.getElementById('mobileMenu'),closeBtn=document.getElementById('mobileClose');
+  /* ── Hamburger ── */
+  var btn=document.getElementById('hamburger');
+  var menu=document.getElementById('mobileMenu');
   if(btn&&menu){
-    function open(){menu.style.display='flex';requestAnimationFrame(function(){requestAnimationFrame(function(){menu.classList.add('open');});});btn.classList.add('open');document.body.style.overflow='hidden';}
-    function close2(){menu.classList.remove('open');btn.classList.remove('open');document.body.style.overflow='';setTimeout(function(){if(!menu.classList.contains('open'))menu.style.display='none';},310);}
-    btn.addEventListener('click',open);
-    if(closeBtn)closeBtn.addEventListener('click',close2);
-    menu.addEventListener('click',function(e){if(e.target===menu)close2();});
-    document.addEventListener('keydown',function(e){if(e.key==='Escape')close2();});
+    var closeBtn=document.getElementById('mobileClose');
+    function openMenu(){
+      menu.style.display='flex';
+      requestAnimationFrame(function(){requestAnimationFrame(function(){menu.classList.add('open');});});
+      btn.classList.add('open');
+      document.body.style.overflow='hidden';
+    }
+    function closeMenu(){
+      menu.classList.remove('open');
+      btn.classList.remove('open');
+      document.body.style.overflow='';
+      setTimeout(function(){if(!menu.classList.contains('open'))menu.style.display='none';},310);
+    }
+    btn.addEventListener('click',openMenu);
+    if(closeBtn)closeBtn.addEventListener('click',closeMenu);
+    menu.addEventListener('click',function(e){if(e.target===menu)closeMenu();});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMenu();});
   }
+  /* ── Float CTA ── */
   var fc=document.getElementById('floatCta');
   if(fc)window.addEventListener('scroll',function(){fc.classList.toggle('visible',window.scrollY>380);},{passive:true});
+  /* ── Reveal ── */
   var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('visible');});},{threshold:0.08});
   document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  /* ── Nav bg ── */
   var nav=document.getElementById('navbar');
   if(nav)window.addEventListener('scroll',function(){nav.style.background=window.scrollY>60?'rgba(10,10,10,0.99)':'rgba(12,12,12,0.96)';},{passive:true});
+  /* ── FAQ ── */
   document.querySelectorAll('.faq-item').forEach(function(item){
     var q=item.querySelector('.faq-q');
     if(q)q.addEventListener('click',function(){var w=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(function(el){el.classList.remove('open');});if(!w)item.classList.add('open');});
   });
+  /* ── Gallery ── */
   var gr=document.getElementById('galleryRow'),gp=document.getElementById('galleryPrev'),gn=document.getElementById('galleryNext'),gd=document.querySelectorAll('.gallery-dot');
-  if(gr&&gp&&gn){
-    function ga(){var i=gr.querySelector('.gallery-item');return i?i.offsetWidth+4:340;}
-    gn.addEventListener('click',function(){gr.scrollBy({left:ga(),behavior:'smooth'});});
-    gp.addEventListener('click',function(){gr.scrollBy({left:-ga(),behavior:'smooth'});});
-    gr.addEventListener('scroll',function(){var items=gr.querySelectorAll('.gallery-item'),idx=0;items.forEach(function(x,i){if(x.offsetLeft<=gr.scrollLeft+10)idx=i;});gd.forEach(function(d,i){d.classList.toggle('active',i===idx);});},{passive:true});
-  }
+  if(gr&&gp&&gn){function ga(){var i=gr.querySelector('.gallery-item');return i?i.offsetWidth+4:340;}
+  gn.addEventListener('click',function(){gr.scrollBy({left:ga(),behavior:'smooth'});});
+  gp.addEventListener('click',function(){gr.scrollBy({left:-ga(),behavior:'smooth'});});
+  gr.addEventListener('scroll',function(){var items=gr.querySelectorAll('.gallery-item'),idx=0;items.forEach(function(x,i){if(x.offsetLeft<=gr.scrollLeft+10)idx=i;});gd.forEach(function(d,i){d.classList.toggle('active',i===idx);});},{passive:true});}
+  /* ── Slideshow ── */
   var sl=document.querySelectorAll('.hero-slide'),sd=document.querySelectorAll('.slide-dot');
   if(sl.length){var cur=0;function gt(i){sl[cur].classList.remove('active');if(sd[cur])sd[cur].classList.remove('active');cur=(i+sl.length)%sl.length;sl[cur].classList.add('active');if(sd[cur])sd[cur].classList.add('active');}
   var st=setInterval(function(){gt(cur+1);},4000);sd.forEach(function(d,i){d.addEventListener('click',function(){clearInterval(st);gt(i);st=setInterval(function(){gt(cur+1);},4000);});});}
