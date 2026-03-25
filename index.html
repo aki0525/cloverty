@@ -90,8 +90,8 @@ html{scroll-behavior:smooth;overflow-x:hidden}
 .d1{transition-delay:0.1s}.d2{transition-delay:0.2s}.d3{transition-delay:0.3s}
 
 /* ── COMMON ── */
-.sec{padding:88px 48px}
-.sec-inner{max-width:1200px;margin:0 auto;width:100%}
+.sec{padding:88px 0}
+.sec-inner{max-width:1200px;margin:0 auto;width:100%;padding:0 48px;box-sizing:border-box}
 .label{font-size:12px;letter-spacing:2px;color:var(--pink);text-transform:uppercase;margin-bottom:14px;display:block}
 .label-jp{letter-spacing:0.3px;text-transform:none}
 .h2{font-size:clamp(24px,3vw,40px);font-weight:800;line-height:1.4;margin-bottom:1.5rem}
@@ -157,7 +157,7 @@ html{scroll-behavior:smooth;overflow-x:hidden}
 .qi-value span{color:var(--pink-dark)}
 
 /* ── REASSURANCE BAR ── */
-#reassurance{background:rgba(209,79,134,0.1);border-top:1px solid rgba(209,79,134,0.25);border-bottom:1px solid rgba(209,79,134,0.25);padding:14px 48px}
+
 .rs-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px}
 .rs-item{display:flex;align-items:center;gap:8px;font-size:13px;color:#1a1a1a;padding:6px 10px;font-weight:600}
 .rs-icon{color:var(--pink-dark);font-weight:900;font-size:15px;flex-shrink:0}
@@ -182,7 +182,7 @@ html{scroll-behavior:smooth;overflow-x:hidden}
 .p3-
 
 /* ── ANXIETY BLOCK ── */
-#anxiety-block{background:#fff;border-top:1px solid rgba(0,0,0,0.07);border-bottom:1px solid rgba(0,0,0,0.07)}
+#anxiety-block{background:#fff;}
 .anxiety-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr}
 .anxiety-left{padding:56px 48px;border-right:1px solid rgba(0,0,0,0.07)}
 .anxiety-right{padding:56px 48px;background:rgba(209,79,134,0.04)}
@@ -276,14 +276,14 @@ html{scroll-behavior:smooth;overflow-x:hidden}
 .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:48px}
 .faq-list{display:flex;flex-direction:column}
 .faq-item{border-bottom:1px solid rgba(0,0,0,0.09)}
-.faq-q{font-size:14px;font-weight:700;color:#111;padding:18px 0;display:flex;gap:12px;justify-content:flex-start;cursor:pointer;user-select:none;align-items:flex-start;transition:color 0.2s}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:18px 0;cursor:pointer;gap:16px;-webkit-tap-highlight-color:transparent}
 .faq-q:hover{color:var(--pink-dark)}
 .faq-q-text{display:flex;gap:12px;align-items:flex-start;flex:1;min-width:0}
 .faq-q-text::before{content:'Q';color:var(--pink-dark);font-weight:800;flex-shrink:0}
 .faq-icon{flex-shrink:0;font-size:18px;line-height:1;color:#555;transition:transform 0.25s;margin-top:1px}
 .faq-item.open .faq-icon{transform:rotate(45deg);color:var(--pink-dark)}
-.faq-a{font-size:13px;color:#3a3a3a;line-height:1.9;padding:0 0 18px 24px;display:none}
-.faq-item.open .faq-a{display:block}
+.faq-a{font-size:14px;color:#3a3a3a;line-height:1.9;padding:0 0 20px 0;display:none;animation:faqOpen 0.25s ease}
+.faq-item.open /* faq-a accordion controlled by JS */
 
 /* ── PARENT MSG ── */
 .pmsg-inner{max-width:860px;margin:0 auto}
@@ -340,7 +340,7 @@ footer.footer-full{background:#080808;padding:56px 48px 36px;border-top:1px soli
   .hero-wrap{padding-top:90px;gap:0}
   .hero-photo{display:none}
   .hero-content{width:100%}
-  .sec{padding:72px 32px}
+  .sec{padding:72px 0}
   .about-inner{grid-template-columns:1fr}
   .coaches-grid{grid-template-columns:1fr 1fr}
   .faq-grid{grid-template-columns:1fr}
@@ -357,7 +357,7 @@ footer.footer-full{background:#080808;padding:56px 48px 36px;border-top:1px soli
 @media(max-width:768px){
   #hero{padding:0 20px;padding-top:0}
   .hero-title{font-size:clamp(30px,8vw,44px)}
-  .sec{padding:56px 20px}
+  .sec{padding:56px 0}
   .anxiety-inner{grid-template-columns:1fr}
   .anxiety-left{border-right:none;border-bottom:1px solid rgba(0,0,0,0.07);padding:40px 20px}
   .anxiety-right{padding:36px 20px}
@@ -376,11 +376,11 @@ footer.footer-full{background:#080808;padding:56px 48px 36px;border-top:1px soli
   .hero-title{font-size:28px;line-height:1.2}
   .hero-subtitle{font-size:14px}
   .h2{font-size:22px}
-  .sec{padding:48px 15px}
+  .sec{padding:48px 0}
   .btn-primary{padding:12px 22px;font-size:12px}
   .btn-outline{padding:12px 22px;font-size:12px}
   .hero-actions{flex-direction:column;align-items:flex-start;gap:12px}
-  .about-inner,.coaches-grid,.pillars-3,.pattern-grid,.fee-blocks,.faq-grid,.pmsg-items,.schedule-cards{grid-template-columns:1fr!important}
+  .about-inner,.pattern-grid,.pmsg-items{grid-template-columns:1fr!important}
   #for-who .checklist{grid-template-columns:1fr}
   .footer-top{grid-template-columns:1fr}
   .footer-bottom{flex-direction:column;gap:8px}
@@ -524,7 +524,7 @@ html { scroll-behavior: smooth; }
 .benefit-
 
 /* 7. FAQ */
-#faq { background: var(--section-light); }
+#faq { background: var(--charcoal); }
 .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 48px; }
 .faq-list { display: flex; flex-direction: column; }
 .faq-item { border-bottom: 1px solid rgba(0,0,0,0.1); }
@@ -534,8 +534,8 @@ html { scroll-behavior: smooth; }
 .faq-q-text::before { content: 'Q'; color: var(--pink-dark); font-weight: 800; flex-shrink: 0; }
 .faq-icon { flex-shrink: 0; font-size: 18px; line-height: 1; color: #555; transition: transform 0.25s; margin-top: 1px; }
 .faq-item.open .faq-icon { transform: rotate(45deg); color: var(--pink-dark); }
-.faq-a { font-size: 13px; color: #444; line-height: 1.9; padding: 0 0 18px 24px; display: none; }
-.faq-item.open .faq-a { display: block; }
+.faq-a { font-size: 14px; line-height: 1.9; padding: 0 0 20px 0; display: none; }
+.faq-item.open /* faq-a accordion controlled by JS */
 .trial-flow { display: flex; flex-direction: column; gap: 2px; }
 .flow-label { font-size: 12px; font-weight: 700; color: var(--white); margin-bottom: 14px; letter-spacing: 1px; }
 .trial-step { background: var(--charcoal); padding: 20px 22px; display: flex; gap: 18px; align-items: flex-start; }
@@ -622,7 +622,7 @@ footer { background: #080808; padding: 56px 48px 36px; border-top: 1px solid rgb
   .btn-primary { padding: 12px 22px; font-size: 12px; letter-spacing: 1px; }
   .btn-outline { padding: 11px 18px; font-size: 12px; letter-spacing: 1px; }
   .hero-actions { flex-direction: column; align-items: flex-start; gap: 10px; }
-  .sec { padding: 48px 16px; }
+  .sec { padding: 48px 0; }
   .footer-top { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
   .rung { padding: 20px 16px; }
@@ -743,7 +743,7 @@ footer { background: #080808; padding: 56px 48px 36px; border-top: 1px solid rgb
 @media (max-width: 600px) { .qi-grid { grid-template-columns: repeat(2, 1fr); } #quickinfo { padding: 28px 16px; } }
 
 /* ── Day Flow ── */
-#dayflow { background: var(--section-light); }
+#dayflow { background: #111; }
 .dayflow-inner { max-width: 1200px; margin: 0 auto; }
 .flow-timeline { display: flex; gap: 2px; margin-top: 48px; overflow: hidden; background: rgba(0,0,0,0.07); }
 .ft-step { flex: 1; position: relative; padding: 28px 20px 28px 28px; border-left: 1px solid rgba(0,0,0,0.08); background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
@@ -758,7 +758,7 @@ footer { background: #080808; padding: 56px 48px 36px; border-top: 1px solid rgb
 }
 
 /* ── Parent Message ── */
-#parentmsg { background: var(--black); }
+#parentmsg { background: rgba(232,112,154,0.06); }
 .pmsg-inner { max-width: 860px; margin: 0 auto; }
 .pmsg-
 .pmsg-body strong { color: var(--white); font-weight: 700; }
@@ -1300,17 +1300,184 @@ body { line-height: 1.8; }
   .brand-name { font-size: 13px; letter-spacing: 1.5px; }
 }
 
-/* ── Mobile padding fix: prevent double-padding ── */
-@media(max-width:768px){
-  .sec { padding-left: 16px !important; padding-right: 16px !important; }
-  .sec-inner { padding-left: 0 !important; padding-right: 0 !important; width: 100% !important; }
-  main { padding-left: 0; padding-right: 0; }
-} /* sec-inner-mobile-fix */
+/* padding handled by sec-inner */
 
 /* 2択カードのスマホ対応 */
 @media(max-width:600px){
   .two-choice-grid { grid-template-columns: 1fr !important; }
 }
+
+/* sec-inner responsive horizontal padding */
+@media(max-width:768px){ .sec-inner { padding: 0 20px; } } /* sec-inner-horiz */
+@media(max-width:480px){ .sec-inner { padding: 0 16px; } }
+
+#dayflow .h2, #dayflow h2 { color: #fff; }
+#dayflow .label { color: var(--pink) !important; }
+#dayflow .ft-step { background: rgba(255,255,255,0.04); }
+#dayflow .ft-num { color: var(--pink); }
+#dayflow .ft-title { color: #fff; }
+#dayflow .ft-body { color: rgba(255,255,255,0.7); }
+
+#faq .h2, #faq h2 { color: #fff; }
+#faq .label { color: var(--pink) !important; }
+#faq .faq-q { color: #fff !important; }
+#faq .faq-a { color: rgba(255,255,255,0.7) !important; }
+#faq .faq-item { border-color: rgba(255,255,255,0.08) !important; }
+
+/* Section rhythm accents */
+.sec-accent-top { border-top: 3px solid var(--pink); }
+.sec-rule { border-top: 1px solid rgba(255,255,255,0.08); }
+.sec-rule-light { border-top: 1px solid rgba(0,0,0,0.08); }
+
+#anxiety-block .anxiety-inner { padding: 64px 48px; }
+@media(max-width:768px){ #anxiety-block .anxiety-inner { padding: 48px 20px; } }
+
+#schedule-overview .h2, #schedule-overview h2, #schedule-overview .sec-title { color: #fff !important; }
+#schedule-overview .label, #schedule-overview .section-label { color: var(--pink) !important; }
+#schedule-overview .schedule-cards, #schedule-overview .sc-card { background: rgba(255,255,255,0.04) !important; }
+#schedule-overview .sc-day { color: #fff !important; }
+#schedule-overview .sc-type { color: rgba(255,255,255,0.6) !important; }
+#schedule-overview .sc-time { color: #fff !important; }
+#schedule-overview .sc-venue { color: rgba(255,255,255,0.5) !important; }
+
+@keyframes faqOpen { from { opacity:0; transform:translateY(-6px); } to { opacity:1; transform:translateY(0); } }
+
+/* ════ MOBILE LAYOUT IMPROVEMENTS ════════════════════════════════ */
+
+/* pillars-3: 2-col on mobile, but still readable */
+@media(max-width:600px){
+  .pillars-3 { grid-template-columns: 1fr 1fr !important; gap: 8px; }
+  .p3-item { padding: 24px 16px; }
+  .p3-icon { font-size: 24px; margin-bottom: 10px; }
+  .p3-title { font-size: 14px; margin-bottom: 6px; }
+  .p3-body { font-size: 12px; line-height: 1.75; }
+}
+@media(max-width:360px){
+  .pillars-3 { grid-template-columns: 1fr !important; }
+}
+
+/* checklist: 2-col on mobile */
+@media(max-width:768px){
+  .checklist { display: grid; grid-template-columns: 1fr 1fr !important; gap: 10px !important; }
+  .cl-item { font-size: 13px; padding: 12px 14px; background: rgba(0,0,0,0.04); border-radius: 4px; }
+  .cl-check { color: var(--pink-dark); font-weight: 900; margin-right: 6px; }
+}
+@media(max-width:360px){
+  .checklist { grid-template-columns: 1fr !important; }
+}
+
+/* coaches-grid: 2-col on mobile */
+@media(max-width:768px){
+  .coaches-grid { grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
+  .coach { padding: 20px 16px; }
+  .coach-role { font-size: 9px; letter-spacing: 1px; margin-bottom: 6px; }
+  .coach-name { font-size: 15px; margin-bottom: 8px; }
+  .coach-bio { font-size: 12px; line-height: 1.75; }
+}
+@media(max-width:420px){
+  .coaches-grid { grid-template-columns: 1fr !important; }
+}
+
+/* schedule-cards: horizontal scroll carousel on mobile */
+@media(max-width:768px){
+  .schedule-cards {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 10px !important;
+    padding-bottom: 12px;
+    grid-template-columns: unset !important;
+    scrollbar-width: none;
+  }
+  .schedule-cards::-webkit-scrollbar { display: none; }
+  .sc-card {
+    flex: 0 0 200px !important;
+    scroll-snap-align: start;
+    min-width: 200px;
+  }
+}
+
+/* fee-blocks: 2-col on mobile if small cards */
+@media(max-width:768px){
+  .fee-blocks { grid-template-columns: 1fr 1fr !important; gap: 8px; }
+}
+@media(max-width:420px){
+  .fee-blocks { grid-template-columns: 1fr !important; }
+}
+
+/* faq-grid: single column but better spacing */
+@media(max-width:768px){
+  .faq-grid { grid-template-columns: 1fr !important; }
+  .faq-item { border-radius: 0; }
+  .faq-q { min-height: 56px; }
+  .faq-icon { font-size: 22px; flex-shrink: 0; }
+  .faq-q-text { font-size: 14px; font-weight: 700; }
+}
+
+/* flow-timeline (dayflow): 2-col compact on mobile */
+@media(max-width:768px){
+  .flow-timeline { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 8px !important; flex-direction: unset !important; }
+  .ft-step { padding: 20px 16px; border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .ft-num { font-size: 18px; margin-bottom: 6px; }
+  .ft-time { font-size: 10px; margin-bottom: 4px; }
+  .ft-title { font-size: 13px; margin-bottom: 6px; }
+  .ft-body { font-size: 12px; line-height: 1.7; }
+}
+@media(max-width:360px){
+  .flow-timeline { grid-template-columns: 1fr !important; }
+}
+
+/* anxiety-block: better mobile stack */
+@media(max-width:768px){
+  .anxiety-inner { padding: 40px 16px !important; gap: 32px; }
+  .anxiety-title { font-size: 22px; margin-bottom: 20px; }
+  .answer-title { font-size: 16px; margin-bottom: 16px; }
+  .anxiety-list li, .answer-list li { font-size: 14px; padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
+}
+
+/* pmsg-items: 2-col on mobile */
+@media(max-width:768px){
+  .pmsg-items { grid-template-columns: 1fr 1fr !important; gap: 12px !important; }
+  .pmsg-item { padding: 20px 16px; }
+}
+@media(max-width:400px){
+  .pmsg-items { grid-template-columns: 1fr !important; }
+}
+
+/* Scroll hint for carousel */
+.schedule-cards-wrap { position: relative; }
+@media(max-width:768px){
+  .schedule-cards-wrap::after {
+    content: '';
+    position: absolute;
+    right: 0; top: 0; bottom: 12px;
+    width: 40px;
+    background: linear-gradient(to right, transparent, var(--charcoal));
+    pointer-events: none;
+  }
+}
+
+/* Section visual breaks */
+.sec + .sec { position: relative; }
+
+@media(max-width:768px){ .scroll-hint-sp { display:block !important; } }
+
+/* p3-item accent top line */
+.p3-item { border-top: 2px solid transparent; }
+.p3-item:first-child { border-top-color: var(--pink); }
+.p3-item:nth-child(2) { border-top-color: rgba(232,112,154,0.5); }
+.p3-item:nth-child(3) { border-top-color: rgba(232,112,154,0.25); }
+
+/* FAQ improved visual */
+.faq-item { transition: background 0.2s; }
+.faq-item.open { background: rgba(255,255,255,0.03); }
+.faq-item.open .faq-q-text { color: var(--white); }
+.faq-icon { font-size: 20px; transition: transform 0.25s ease, color 0.2s; }
+
+/* coach card number badge */
+.coach-num { display:none; }
 </style>
 </head>
 <body>
@@ -1587,7 +1754,7 @@ body { line-height: 1.8; }
 
 
 <!-- 不安先回りブロック -->
-<section id="anxiety-block">
+<section id="anxiety-block" style="border-top:3px solid var(--pink)">
   <div class="anxiety-inner">
     <div class="anxiety-left">
       <div class="anxiety-title">こんな不安、<br>ありませんか？</div>
@@ -1608,11 +1775,7 @@ body { line-height: 1.8; }
         <li><span class="answer-check">✓</span>月謝・初期費用・送迎代をすべて公開</li>
         <li><span class="answer-check">✓</span>まず1回の無料体験から。無理な勧誘なし</li>
       </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ③ こんな子に向いています -->
+    </div></div></section><!-- こんな子 こんな子に向いています -->
 <section id="for-who" class="sec sec-light">
   <div class="sec-inner">
     <span class="label reveal">For Who / <span class="label-jp">こんなお子さまに</span></span>
@@ -1632,11 +1795,11 @@ body { line-height: 1.8; }
 </section>
 
 <!-- ④ 活動概要 -->
-<section id="schedule-overview" class="sec sec-light">
+<section id="schedule-overview" class="sec" style="background:var(--charcoal)">
   <div class="sec-inner">
-    <span class="label reveal">Schedule / <span class="label-jp">活動日・時間・場所</span></span>
-    <h2 class="h2 reveal">所沢エリアの<br>活動日・時間・<em>場所。</em></h2>
-    <div class="schedule-cards reveal">
+    <span class="label reveal" style="color:var(--pink)">Schedule / <span class="label-jp">活動日・時間・場所</span></span>
+    <h2 class="h2 reveal" style="color:#fff">所沢エリアの<br>活動日・時間・<em>場所。</em></h2>
+    <div class="schedule-cards-wrap"><p style="font-size:11px;color:rgba(255,255,255,0.35);margin-bottom:8px;display:none" class="scroll-hint-sp">← 横スクロールで全曜日を確認 →</p><div class="schedule-cards reveal">
       <div class="sc-card sc-wed">
         <div class="sc-day">水曜日</div>
         <div class="sc-time">17:00〜18:15</div>
@@ -1668,7 +1831,7 @@ body { line-height: 1.8; }
 </section>
 
 <!-- ⑤ 参加パターン -->
-<section id="courses" class="sec" style="background:var(--black)">
+<section id="courses" style="border-top:3px solid var(--pink)" class="sec" style="background:var(--black)">
   <div class="sec-inner">
     <span class="label reveal">Course / <span class="label-jp">クラブチーム 参加パターン</span></span>
     <h2 class="h2 reveal">ご家庭に合わせて<br><em>選べる参加パターン。</em></h2>
