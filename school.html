@@ -70,7 +70,7 @@ body{background:var(--black);color:var(--white);font-family:'Noto Sans JP',sans-
 
 /* ── TOKENS ── */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden}
 
 
 /* ── NAV ── */
@@ -1102,6 +1102,13 @@ body { line-height: 1.8; }
   .header-inner { padding: 0 12px; }
   .brand-name { font-size: 13px; letter-spacing: 1.5px; }
 }
+
+/* ── Mobile padding fix: prevent double-padding ── */
+@media(max-width:768px){
+  .sec { padding-left: 16px !important; padding-right: 16px !important; }
+  .sec-inner { padding-left: 0 !important; padding-right: 0 !important; width: 100% !important; }
+  main { padding-left: 0; padding-right: 0; }
+} /* sec-inner-mobile-fix */
 </style>
 </head>
 <body class="school-page">
@@ -1121,7 +1128,7 @@ body { line-height: 1.8; }
       <a href="coaches.html">コーチ</a>
       <a href="policy.html">チーム規約</a>
       <a href="access.html">アクセス</a>
-      <a href="contact.html" class="nav-cta">無料体験</a>
+      <a href="contact.html" class="nav-cta">無料体験を申し込む</a>
     </nav>
     <button class="hb-btn" id="hbBtn" aria-label="メニューを開く"><span></span><span></span><span></span></button>
   </div>
@@ -1150,7 +1157,7 @@ body { line-height: 1.8; }
     </div>
     <span class="section-label">Football School / スクール</span>
     <h1 class="page-title">CLOVERTY<br><em>SOCCER SCHOOL</em></h1>
-    <p class="page-desc">所沢・埼玉西部エリアで活動するサッカースクール。未経験の子や、基礎からしっかり学びたい子向けのクラスです。<br>小学生を中心に、年長〜中学生も相談可。初心者・経験者どちらも歓迎です。</p>
+    <p class="page-desc">所沢・埼玉西部エリアで活動するサッカースクール。未経験の子や、基礎からしっかり学びたい子向けのクラスです。<br>小学生を中心に、幼児〜中学生も相談可。初心者・経験者どちらも歓迎です。</p>
   </div>
 </div>
 
@@ -1276,26 +1283,23 @@ body { line-height: 1.8; }
     <h2 class="sec-title reveal">こんな<em>環境</em>で<br>練習しています。</h2>
     <div class="scene-grid">
       <div class="scene-item wide reveal">
-        <div class="scene-ph">
-          <div class="scene-ph-icon">📷</div>
-          <div class="scene-ph-text">メイン写真</div>
-          <div class="scene-ph-sub">練習・指導風景 推奨 1200×560px</div>
+        <div class="scene-ph" style="min-height:240px"></div>
+          
+          
         </div>
         <div class="scene-cap">練習風景</div>
       </div>
       <div class="scene-item reveal">
-        <div class="scene-ph">
-          <div class="scene-ph-icon">📷</div>
-          <div class="scene-ph-text">写真2</div>
-          <div class="scene-ph-sub">600×400px</div>
+        <div class="scene-ph" style="min-height:240px"></div>
+          
+          
         </div>
         <div class="scene-cap">ドリブル練習</div>
       </div>
       <div class="scene-item reveal d1">
-        <div class="scene-ph">
-          <div class="scene-ph-icon">📷</div>
-          <div class="scene-ph-text">写真3</div>
-          <div class="scene-ph-sub">600×400px</div>
+        <div class="scene-ph" style="min-height:240px"></div>
+          
+          
         </div>
         <div class="scene-cap">コーチ指導</div>
       </div>
@@ -1404,7 +1408,7 @@ body { line-height: 1.8; }
       <p class="fc-title">Course</p>
       <ul class="fc-links">
         <li><a href="school.html">スクール（初心者〜）</a></li>
-        <li><a href="fees.html">プレミアムコース</a></li>
+        <li><a href="fees.html">料金・コース一覧</a></li>
         <li><a href="club.html">CLOVERTY FC U-10</a></li>
         <li><a href="contact.html">無料体験申込</a></li>
       </ul>
@@ -1425,7 +1429,7 @@ body { line-height: 1.8; }
     </div>
   </div>
 </footer>
-<a href="contact.html" class="float-cta" id="floatCta">無料体験に参加する</a>
+<a href="contact.html" class="float-cta" id="floatCta">無料体験を申し込む</a>
 <script>
 (function(){
 

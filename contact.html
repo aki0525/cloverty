@@ -70,7 +70,7 @@ body{background:var(--black);color:var(--white);font-family:'Noto Sans JP',sans-
 
 /* ── TOKENS ── */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden}
 
 
 /* ── NAV ── */
@@ -716,6 +716,13 @@ body { line-height: 1.8; }
   .header-inner { padding: 0 12px; }
   .brand-name { font-size: 13px; letter-spacing: 1.5px; }
 }
+
+/* ── Mobile padding fix: prevent double-padding ── */
+@media(max-width:768px){
+  .sec { padding-left: 16px !important; padding-right: 16px !important; }
+  .sec-inner { padding-left: 0 !important; padding-right: 0 !important; width: 100% !important; }
+  main { padding-left: 0; padding-right: 0; }
+} /* sec-inner-mobile-fix */
 </style>
 </head>
 <body>
@@ -735,7 +742,7 @@ body { line-height: 1.8; }
       <a href="coaches.html">コーチ</a>
       <a href="policy.html">チーム規約</a>
       <a href="access.html">アクセス</a>
-      <a href="contact.html" class="nav-cta">無料体験</a>
+      <a href="contact.html" class="nav-cta">無料体験を申し込む</a>
     </nav>
     <button class="hb-btn" id="hbBtn" aria-label="メニューを開く"><span></span><span></span><span></span></button>
   </div>
@@ -920,7 +927,7 @@ body { line-height: 1.8; }
       <p class="fc-title">Course</p>
       <ul class="fc-links">
         <li><a href="school.html">スクール（初心者〜）</a></li>
-        <li><a href="fees.html">プレミアムコース</a></li>
+        <li><a href="fees.html">料金・コース一覧</a></li>
         <li><a href="club.html">CLOVERTY FC U-10</a></li>
         <li><a href="contact.html">無料体験申込</a></li>
       </ul>
@@ -941,7 +948,7 @@ body { line-height: 1.8; }
     </div>
   </div>
 </footer>
-<a href="contact.html" class="float-cta" id="floatCta">無料体験に参加する</a>
+<a href="contact.html" class="float-cta" id="floatCta">無料体験を申し込む</a>
 <script>
 (function(){
 

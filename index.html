@@ -70,7 +70,7 @@ body{background:var(--black);color:var(--white);font-family:'Noto Sans JP',sans-
 
 /* ── TOKENS ── */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden}
 
 
 /* ── NAV ── */
@@ -1299,6 +1299,18 @@ body { line-height: 1.8; }
   .header-inner { padding: 0 12px; }
   .brand-name { font-size: 13px; letter-spacing: 1.5px; }
 }
+
+/* ── Mobile padding fix: prevent double-padding ── */
+@media(max-width:768px){
+  .sec { padding-left: 16px !important; padding-right: 16px !important; }
+  .sec-inner { padding-left: 0 !important; padding-right: 0 !important; width: 100% !important; }
+  main { padding-left: 0; padding-right: 0; }
+} /* sec-inner-mobile-fix */
+
+/* 2択カードのスマホ対応 */
+@media(max-width:600px){
+  .two-choice-grid { grid-template-columns: 1fr !important; }
+}
 </style>
 </head>
 <body>
@@ -1318,7 +1330,7 @@ body { line-height: 1.8; }
       <a href="coaches.html">コーチ</a>
       <a href="policy.html">チーム規約</a>
       <a href="access.html">アクセス</a>
-      <a href="contact.html" class="nav-cta">無料体験</a>
+      <a href="contact.html" class="nav-cta">無料体験を申し込む</a>
     </nav>
     <button class="hb-btn" id="hbBtn" aria-label="メニューを開く"><span></span><span></span><span></span></button>
   </div>
@@ -1346,7 +1358,7 @@ body { line-height: 1.8; }
   <div class="hero-grid"></div>
   <div class="hero-wrap">
   <div class="hero-content">
-    <div class="hero-tagline">所沢・埼玉西部 / 小1〜中3 / 2026年4月始動</div>
+    <div class="hero-tagline">所沢・埼玉西部 / 幼児〜中学生 / 2026年4月始動</div>
     <h1 class="hero-title">
       <span class="line1">所沢発、ジュニアサッカーブランド</span>
       <span class="accent" style="color:var(--pink);font-weight:900;letter-spacing:4px">CLOVERTY</span>
@@ -1370,7 +1382,7 @@ body { line-height: 1.8; }
       無料体験 受付中 ─ 定員に達し次第、募集を締め切る場合があります
     </div>
     <div class="hero-actions">
-      <a href="contact.html" class="btn-primary">無料体験に参加する（1回だけでもOK）</a>
+      <a href="contact.html" class="btn-primary">無料体験を申し込む（1回だけでもOK）</a>
       <a href="#quickinfo" class="btn-text">活動概要を見る <span>→</span></a>
     </div>
   </div>
@@ -1411,20 +1423,20 @@ body { line-height: 1.8; }
 <section id="quickinfo">
   <div class="qi-grid" style="background:rgba(0,0,0,0.07)">
     <div class="qi-item">
-      <div class="qi-label">対象</div>
-      <div class="qi-value">幼児〜小6<br><span>中学生以上</span>も対応</div>
+      <div class="qi-label">未経験</div>
+      <div class="qi-value">未経験から<br><span>参加OK</span></div>
     </div>
     <div class="qi-item">
-      <div class="qi-label">活動日</div>
-      <div class="qi-value">水曜<span>＋</span>土日祝<br>週3〜4回</div>
+      <div class="qi-label">無料体験</div>
+      <div class="qi-value"><span>随時受付中</span><br>1回だけでもOK</div>
+    </div>
+    <div class="qi-item">
+      <div class="qi-label">保護者</div>
+      <div class="qi-value">当番・役員<br><span>なし</span></div>
     </div>
     <div class="qi-item">
       <div class="qi-label">送迎</div>
-      <div class="qi-value">所沢エリア中心<br><span>送迎相談可</span>（¥1,000〜/月）</div>
-    </div>
-    <div class="qi-item">
-      <div class="qi-label">体験</div>
-      <div class="qi-value">未経験から参加OK<br><span>無料体験</span>随時受付中</div>
+      <div class="qi-value"><span>送迎相談可</span><br>¥1,000〜/月</div>
     </div>
     <div class="qi-item">
       <div class="qi-label">月謝</div>
@@ -1437,6 +1449,30 @@ body { line-height: 1.8; }
   </div>
 </section>
 
+
+<!-- スクール vs クラブ 2択カード -->
+<section style="background:#f5f3ef;padding:48px 32px">
+  <div style="max-width:900px;margin:0 auto">
+    <p style="text-align:center;font-size:12px;letter-spacing:3px;color:var(--pink-dark);text-transform:uppercase;margin-bottom:24px">WHICH FITS YOU?</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px" class="two-choice-grid">
+      <a href="school.html" style="display:block;background:#fff;border:2px solid rgba(0,0,0,0.08);border-radius:4px;padding:32px 24px;text-decoration:none;transition:border-color 0.2s,box-shadow 0.2s" onmouseover="this.style.borderColor='#c8547e';this.style.boxShadow='0 8px 24px rgba(200,84,126,0.15)'" onmouseout="this.style.borderColor='rgba(0,0,0,0.08)';this.style.boxShadow='none'">
+        <div style="font-size:22px;margin-bottom:12px">🌱</div>
+        <div style="font-size:16px;font-weight:800;color:#111;margin-bottom:6px">スクール</div>
+        <div style="font-size:12px;font-weight:700;color:var(--pink-dark);letter-spacing:1px;margin-bottom:12px">CLOVERTY SOCCER SCHOOL</div>
+        <div style="font-size:13px;color:#444;line-height:1.8">幼児〜中学生<br>未経験から経験者まで<br>基礎技術・個の育成</div>
+        <div style="margin-top:16px;font-size:12px;font-weight:700;color:var(--pink-dark)">詳しく見る →</div>
+      </a>
+      <a href="club.html" style="display:block;background:#111;border:2px solid #111;border-radius:4px;padding:32px 24px;text-decoration:none;transition:border-color 0.2s,box-shadow 0.2s" onmouseover="this.style.borderColor='var(--pink)';this.style.boxShadow='0 8px 24px rgba(232,112,154,0.25)'" onmouseout="this.style.borderColor='#111';this.style.boxShadow='none'">
+        <div style="font-size:22px;margin-bottom:12px">⚽</div>
+        <div style="font-size:16px;font-weight:800;color:#fff;margin-bottom:6px">クラブ U-10</div>
+        <div style="font-size:12px;font-weight:700;color:var(--pink);letter-spacing:1px;margin-bottom:12px">CLOVERTY FC</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.75);line-height:1.8">主に小4以下<br>試合・実戦中心<br>クラブチーム活動</div>
+        <div style="margin-top:16px;font-size:12px;font-weight:700;color:var(--pink)">詳しく見る →</div>
+      </a>
+    </div>
+    <p style="text-align:center;font-size:12px;color:#888;margin-top:16px">※ 迷ったらまず無料体験から。コーチが一緒に考えます。</p>
+  </div>
+</section>
 <!-- ② PHILOSOPHY -->
 <!-- CLOVERTYについて -->
 <section id="about-cloverty" class="sec" style="background:var(--charcoal);padding-top:56px;padding-bottom:56px">
@@ -1455,7 +1491,7 @@ body { line-height: 1.8; }
       <div class="about-diff">
         <div class="ad-item" style="border-left-color:#555">
           <div class="ad-label">スクール</div>
-          <div class="ad-body">基礎育成中心。未経験〜経験者まで。小1〜中3対象。週1〜4回で通える。</div>
+          <div class="ad-body">基礎育成中心。未経験〜経験者まで。幼児〜中学生対象。週1〜4回で通える。</div>
           <a href="school.html" class="ad-link">スクール詳細 →</a>
         </div>
         <div class="ad-item ad-item-club">
@@ -1481,8 +1517,8 @@ body { line-height: 1.8; }
         <div style="font-size:22px;font-weight:900;color:#fff;margin-bottom:12px">幼児〜中学生</div>
         <div style="font-size:13px;color:#888;line-height:1.9">
           ビギナー：幼児 / 小1〜6年生<br>
-          スキルアップ：幼児〜小6年生<br>
-          エリート：小1年生〜中学生以上
+          スキルアップ：幼児〜中学生<br>
+          エリート：幼児〜中学生
         </div>
         <a href="school.html" style="display:inline-block;margin-top:16px;font-size:12px;color:#aaa;text-decoration:none">スクール詳細 →</a>
       </div>
@@ -1700,7 +1736,7 @@ body { line-height: 1.8; }
         <div class="fb-note">※ 現スクール生は入会金¥0。</div>
       </div>
       <div class="fb-block fb-transport">
-        <div class="fb-title">送迎サービス <span style="font-size:11px;color:var(--pink);margin-left:8px">差別化ポイント</span></div>
+        <div class="fb-title">送迎サービスについて</div>
         <div class="fb-rows">
           <div class="fb-row"><span class="fb-label">片道（10km未満）</span><span class="fb-val">¥1,000/月</span></div>
           <div class="fb-row"><span class="fb-label">往復（10km未満）</span><span class="fb-val">¥2,000/月</span></div>
@@ -1865,12 +1901,12 @@ body { line-height: 1.8; }
     </div>
     <div class="gallery-scroll-wrap">
       <div class="gallery-row" id="galleryRow">
-        <div class="gallery-item"><div class="gallery-placeholder"><div class="gallery-placeholder-icon">+</div><div class="gallery-placeholder-text">メイン写真</div><div class="gallery-placeholder-sub">推奨 960×520px</div></div><div class="gallery-overlay"><span class="gallery-caption">練習風景</span></div></div>
-        <div class="gallery-item"><div class="gallery-placeholder"><div class="gallery-placeholder-icon">+</div><div class="gallery-placeholder-text">写真 2</div><div class="gallery-placeholder-sub">680×520px</div></div><div class="gallery-overlay"><span class="gallery-caption">試合シーン</span></div></div>
-        <div class="gallery-item"><div class="gallery-placeholder"><div class="gallery-placeholder-icon">+</div><div class="gallery-placeholder-text">写真 3</div><div class="gallery-placeholder-sub">680×520px</div></div><div class="gallery-overlay"><span class="gallery-caption">コーチ指導</span></div></div>
-        <div class="gallery-item"><div class="gallery-placeholder"><div class="gallery-placeholder-icon">+</div><div class="gallery-placeholder-text">写真 4</div><div class="gallery-placeholder-sub">680×520px</div></div><div class="gallery-overlay"><span class="gallery-caption">チームの様子</span></div></div>
-        <div class="gallery-item"><div class="gallery-placeholder"><div class="gallery-placeholder-icon">+</div><div class="gallery-placeholder-text">写真 5</div><div class="gallery-placeholder-sub">680×520px</div></div><div class="gallery-overlay"><span class="gallery-caption">ドリブル練習</span></div></div>
-        <div class="gallery-item"><div class="gallery-placeholder"><div class="gallery-placeholder-icon">+</div><div class="gallery-placeholder-text">写真 6</div><div class="gallery-placeholder-sub">680×520px</div></div><div class="gallery-overlay"><span class="gallery-caption">ゴール前の攻防</span></div></div>
+        <div class="gallery-item"></div><div class="gallery-overlay"><span class="gallery-caption">練習風景</span></div></div>
+        <div class="gallery-item"></div><div class="gallery-overlay"><span class="gallery-caption">試合シーン</span></div></div>
+        <div class="gallery-item"></div><div class="gallery-overlay"><span class="gallery-caption">コーチ指導</span></div></div>
+        <div class="gallery-item"></div><div class="gallery-overlay"><span class="gallery-caption">チームの様子</span></div></div>
+        <div class="gallery-item"></div><div class="gallery-overlay"><span class="gallery-caption">ドリブル練習</span></div></div>
+        <div class="gallery-item"></div><div class="gallery-overlay"><span class="gallery-caption">ゴール前の攻防</span></div></div>
       </div>
     </div>
     <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px;flex-wrap:wrap;gap:8px">
@@ -1937,7 +1973,7 @@ body { line-height: 1.8; }
       <span class="cta-check">動きやすい服装のみでOK</span>
     </div>
     <div class="cta-actions reveal">
-      <a href="contact.html" class="btn-primary btn-large">無料体験に参加する（1回だけでもOK）</a>
+      <a href="contact.html" class="btn-primary btn-large">無料体験を申し込む（1回だけでもOK）</a>
       <a href="https://www.instagram.com/cloverty_fc" target="_blank" rel="noopener noreferrer" class="btn-outline" style="display:inline-flex;align-items:center;gap:8px"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-2px;flex-shrink:0"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>Instagram でDMする</a>
     </div>
     <p class="cta-no-push reveal">※ 無理な勧誘は行いません</p>
@@ -1968,7 +2004,7 @@ body { line-height: 1.8; }
       <p class="fc-title">Course</p>
       <ul class="fc-links">
         <li><a href="school.html">スクール（初心者〜）</a></li>
-        <li><a href="fees.html">プレミアムコース</a></li>
+        <li><a href="fees.html">料金・コース一覧</a></li>
         <li><a href="club.html">CLOVERTY FC U-10</a></li>
         <li><a href="contact.html">無料体験申込</a></li>
       </ul>
@@ -1989,7 +2025,7 @@ body { line-height: 1.8; }
     </div>
   </div>
 </footer>
-<a href="contact.html" class="float-cta" id="floatCta">無料体験に参加する</a>
+<a href="contact.html" class="float-cta" id="floatCta">無料体験を申し込む</a>
 <script>
 (function(){
 
