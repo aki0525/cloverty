@@ -34,7 +34,7 @@
   --blue-light:    #7a9be8;
   --section-light: #f7f5f2;
 }
-body{background:var(--black);color:var(--white);font-family:'Noto Sans JP',sans-serif;font-weight:400;font-size:16px;letter-spacing:0.03em;overflow-x:hidden;line-height:1.75}
+body{background:var(--black);color:var(--white);font-family:'Noto Sans JP',sans-serif;font-weight:400;font-size:16px;letter-spacing:0.03em;overflow-x:hidden;line-height:1.8}
  HEADER ══════════════════════════════════════════════════════ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
@@ -153,7 +153,7 @@ html{scroll-behavior:smooth}
 .qi-item{background:var(--section-light);padding:32px 20px;text-align:center;transition:background 0.2s}
 .qi-item:hover{background:rgba(232,112,154,0.06)}
 .qi-label{font-size:12px;letter-spacing:1.5px;color:#555;text-transform:uppercase;margin-bottom:8px}
-.qi-value{font-size:13px;font-weight:700;color:#111;line-height:1.75}
+.qi-value{font-size:13px;font-weight:700;color:#111;line-height:1.8}
 .qi-value span{color:var(--pink-dark)}
 
 /* ── REASSURANCE BAR ── */
@@ -219,7 +219,7 @@ html{scroll-behavior:smooth}
 .pt-card.pt-full .pt-badge{color:var(--blue-light)}
 .pt-price{font-size:28px;font-weight:900;color:var(--white);margin-bottom:8px}
 .pt-price span{font-size:13px;color:#999;font-weight:300}
-.pt-for{font-size:12px;color:var(--gray-light);margin-bottom:8px;line-height:1.75}
+.pt-for{font-size:12px;color:var(--gray-light);margin-bottom:8px;line-height:1.8}
 .pt-note{font-size:13px;color:#999;line-height:1.6;border-top:1px solid rgba(255,255,255,0.06);padding-top:10px;margin-top:8px}
 
 /* ── FEES ── */
@@ -302,7 +302,7 @@ html{scroll-behavior:smooth}
 .cta-urgency-box{display:flex;align-items:flex-start;gap:12px;background:rgba(232,112,154,0.08);border:1px solid rgba(232,112,154,0.2);padding:14px 20px;border-radius:2px;margin-bottom:24px;text-align:left;max-width:500px;margin-left:auto;margin-right:auto}
 .cub-dot{width:8px;height:8px;background:var(--pink);border-radius:50%;flex-shrink:0;margin-top:5px;animation:pulse 1.5s ease infinite}
 .cub-title{font-size:13px;font-weight:700;color:var(--white);margin-bottom:4px}
-.cub-sub{font-size:12px;color:var(--gray-light);line-height:1.75}
+.cub-sub{font-size:12px;color:var(--gray-light);line-height:1.8}
 .cta-title{font-size:clamp(28px,4.5vw,52px);font-weight:800;line-height:1.2;margin-bottom:16px;color:var(--white)}
 .cta-title em{color:var(--pink);font-style:normal}
 .cta-desc{font-size:14px;color:var(--gray-light);line-height:2.1;margin-bottom:8px}
@@ -376,7 +376,7 @@ footer.footer-full{background:#080808;padding:56px 48px 36px;border-top:1px soli
   .hero-title{font-size:28px;line-height:1.2}
   .hero-subtitle{font-size:14px}
   .h2{font-size:22px}
-  .sec{padding:48px 16px}
+  .sec{padding:48px 15px}
   .btn-primary{padding:12px 22px;font-size:12px}
   .btn-outline{padding:12px 22px;font-size:12px}
   .hero-actions{flex-direction:column;align-items:flex-start;gap:12px}
@@ -668,7 +668,7 @@ footer{background:#080808;padding:40px 48px;border-top:1px solid rgba(255,255,25
 
 
 /* ── Typography improvements ── */
-body { line-height: 1.75; }
+body { line-height: 1.8; }
 .lead, .page-desc { line-height: 1.9; font-size: 15px; }
 .faq-a { line-height: 1.9; font-size: 14px; }
 .pmsg-body, .coach-bio, .ad-text, .feat-body { line-height: 1.9; }
@@ -679,6 +679,21 @@ body { line-height: 1.75; }
 .co-card { padding: 36px 32px; }
 .fb-block { padding: 32px 28px; }
 
+
+@media(max-width:360px){.brand-name{font-size:13px;letter-spacing:1px}.brand-emblem{height:28px}}
+/* ── Accessibility & readability micro-fixes ── */
+/* Section spacing bump */
+.sec + .sec, section + section { margin-top: 0; }
+/* Feature/card shadow for depth */
+.feat { transition: transform 0.2s, box-shadow 0.2s; }
+.feat:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+/* h3 usage */
+.feat-title, .flow-title, .coach-name { font-size: 15px; font-weight: 700; }
+/* Ensure 375px doesn't clip header */
+@media(max-width:375px){
+  .header-inner { padding: 0 12px; }
+  .brand-name { font-size: 13px; letter-spacing: 1.5px; }
+}
 </style>
 </head>
 <body>
