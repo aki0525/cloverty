@@ -617,6 +617,29 @@ footer{background:#080808;padding:40px 48px;border-top:1px solid rgba(255,255,25
 /* open時のtransitionを確実に */
 .sp-menu.is-open { display: flex; opacity: 1; }
 
+
+/* ── Policy: mobile fix for article number clipping ── */
+@media(max-width:768px){
+  .policy-article,
+  .article,
+  .sec-inner { overflow: visible !important; }
+
+  .article-num {
+    display: block;
+    letter-spacing: 2px;
+    white-space: nowrap;
+  }
+  .article-body ol,
+  .article-body ul { padding-left: 18px; }
+  .article-body li { word-break: break-word; }
+}
+@media(max-width:480px){
+  .article-num { letter-spacing: 1px; }
+  .sec { padding-left: 20px !important; padding-right: 20px !important; }
+  .article-body ol,
+  .article-body ul { padding-left: 14px; }
+}
+
 </style>
 </head>
 <body>
