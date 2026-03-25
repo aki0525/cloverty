@@ -401,19 +401,20 @@ footer.footer-full{background:#080808;padding:56px 48px 36px;border-top:1px soli
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 .header-nav { /* layout handled by site-header */ }
-.page-hero{min-height:100vh;display:flex;align-items:center;padding:100px 48px 60px;position:relative;overflow:hidden}.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(232,112,154,0.05),transparent)}.hero-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto}
+.page-hero{min-height:100vh;display:flex;align-items:center;padding:100px 48px 60px;position:relative;overflow:hidden}.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(232,112,154,0.05),transparent)}.hero-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto;width:100%}
 .section-label{font-family:'Noto Sans JP';font-size:11px;letter-spacing:1.5px;color:var(--pink);margin-bottom:14px;display:block;text-transform:uppercase}.page-title{font-family:'Noto Sans JP',sans-serif;font-size:clamp(32px, 6vw, 72px);font-weight:300;line-height:1.05;margin-bottom:20px}.page-title em{font-style:normal;color:var(--pink)}.page-desc{font-size:14px;color:var(--gray-light);line-height:2;max-width:540px}
 .sec{padding:80px 48px}.sec-inner{max-width:800px;margin:0 auto}
 
 /* policy article */
-.policy-article{font-size:14px;line-height:2.2;color:#c8c8c8}
+.policy-article{font-size:14px;line-height:2.2;color:#c8c8c8;overflow:visible}
 .article{margin-bottom:48px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.06)}
 .article:last-child{border-bottom:none}
 .article-num{font-family:'Noto Sans JP';font-size:11px;letter-spacing:4px;color:var(--pink);margin-bottom:10px;display:block}
 .article-title{font-size:17px;font-weight:700;color:var(--white);margin-bottom:16px}
 .article-
-.article-body ol,.article-body ul{padding-left:20px;margin-top:8px}
-.article-body li{margin-bottom:6px}
+.article-body ol,.article-body ul{padding-left:28px;margin-top:8px}
+@media(max-width:480px){.article-body ol,.article-body ul{padding-left:20px}}
+.article-body li{margin-bottom:6px;padding-left:4px}
 .article-body p{margin-bottom:8px}
 
 .enforcement{background:rgba(232,112,154,0.05);border:1px solid rgba(232,112,154,0.15);padding:24px 28px;margin-top:40px;font-size:13px;color:#c0c0c0;line-height:1.9}
