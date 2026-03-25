@@ -397,7 +397,7 @@ footer.footer-full{background:#080808;padding:56px 48px 36px;border-top:1px soli
 /* ══ PAGE-SPECIFIC CSS ══ */
 
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 48px;background:rgba(12,12,12,0.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.05)}
+.header-nav { /* layout handled by site-header */ }
 .main{max-width:800px;margin:0 auto;padding:120px 48px 80px}
 h1{font-size:28px;font-weight:900;margin-bottom:8px}
 .date{font-size:12px;color:#666;margin-bottom:48px}
@@ -564,13 +564,14 @@ footer{background:#080808;padding:32px 48px;border-top:1px solid rgba(255,255,25
   }
 }
 /* ヘッダー右端配置の確認 */
-.header-inner {
-  justify-content: space-between !important;
-}
-/* hb-btn を常に右端に */
-.hb-btn {
-  margin-left: auto;
-  order: 99;
+@media(max-width:1024px){
+  .header-inner {
+    justify-content: space-between !important;
+  }
+  .hb-btn {
+    margin-left: auto;
+    order: 99;
+  }
 }
 
 
