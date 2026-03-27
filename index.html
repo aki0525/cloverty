@@ -22,6 +22,21 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  corePlugins: { preflight: false },
+  theme: {
+    extend: {
+      colors: {
+        pink: '#e8709a',
+        'pink-dark': '#c8547e',
+      }
+    }
+  }
+}
+</script>
+<link rel="stylesheet" href="fixes.css">
 <style>
 :root {
   --pink:          #e8709a;
@@ -66,11 +81,7 @@ body{background:var(--black);color:var(--white);font-family:'Noto Sans JP',sans-
 .page-hero,.page-hero-dark{padding-top:120px}
 @media(max-width:768px){.page-hero,.page-hero-dark{padding-top:96px}}
 
-/* ══ PAGE CSS ══════════════════════════════════════════════════ */
-
-/* ── TOKENS ── */
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;overflow-x:hidden}
+/* ══ PAGE CSS ══════════════════════════════════════════════════════ */
 
 
 /* ── NAV ── */
@@ -170,7 +181,6 @@ html{scroll-behavior:smooth;overflow-x:hidden}
 .ad-item-club{border-left-color:var(--pink)}
 .ad-label{font-size:12px;font-weight:700;color:var(--white);letter-spacing:1px;margin-bottom:8px}
 .ad-item-club .ad-label{color:var(--pink)}
-.ad-
 .ad-link{font-size:12px;color:var(--pink);text-decoration:none}
 
 /* ── VALUE PROPS ── */
@@ -179,8 +189,6 @@ html{scroll-behavior:smooth;overflow-x:hidden}
 .p3-item:hover{background:rgba(232,112,154,0.05)}
 .p3-icon{font-size:28px;margin-bottom:16px}
 .p3-title{font-size:17px;font-weight:800;color:var(--white);margin-bottom:12px}
-.p3-
-
 /* ── ANXIETY BLOCK ── */
 #anxiety-block{background:#fff;}
 .anxiety-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr}
@@ -189,7 +197,7 @@ html{scroll-behavior:smooth;overflow-x:hidden}
 .anxiety-title{font-size:20px;font-weight:800;color:#111;margin-bottom:24px;line-height:1.4}
 .anxiety-list{list-style:none;display:flex;flex-direction:column;gap:12px}
 .anxiety-list li{font-size:14px;color:#444;display:flex;gap:10px;align-items:flex-start;line-height:1.7}
-.anxiety-q{color:#999;font-weight:700;flex-shrink:0}
+.anxiety-q{color:#666;font-weight:700;flex-shrink:0}
 .answer-title{font-size:12px;font-weight:700;color:var(--pink-dark);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px}
 .answer-list{list-style:none;display:flex;flex-direction:column;gap:12px}
 .answer-list li{font-size:14px;color:#2B2B2B;display:flex;gap:10px;align-items:flex-start;line-height:1.7;font-weight:500}
@@ -248,8 +256,6 @@ html{scroll-behavior:smooth;overflow-x:hidden}
 .ft-num{font-size:13px;font-weight:900;color:var(--pink-dark);letter-spacing:1px;margin-bottom:6px;opacity:0.8}
 .ft-time{font-size:12px;letter-spacing:2px;color:var(--pink-dark);margin-bottom:8px;font-weight:700}
 .ft-title{font-size:14px;font-weight:700;color:#111;margin-bottom:6px}
-.ft-
-
 /* ── GALLERY ── */
 .gallery-scroll-wrap{position:relative;margin-top:40px}
 .gallery-row{display:flex;gap:4px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:4px}
@@ -283,16 +289,14 @@ html{scroll-behavior:smooth;overflow-x:hidden}
 .faq-icon{flex-shrink:0;font-size:18px;line-height:1;color:#555;transition:transform 0.25s;margin-top:1px}
 .faq-item.open .faq-icon{transform:rotate(45deg);color:var(--pink-dark)}
 .faq-a{font-size:14px;color:#3a3a3a;line-height:1.9;padding:0 0 20px 0;display:none;animation:faqOpen 0.25s ease}
-.faq-item.open /* faq-a accordion controlled by JS */
+.faq-item.open .faq-a { display:block; animation:faqOpen 0.25s ease; }
 
 /* ── PARENT MSG ── */
 .pmsg-inner{max-width:860px;margin:0 auto}
-.pmsg-
 .pmsg-body strong{color:var(--white);font-weight:700}
 .pmsg-items{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:36px}
 .pmsg-item{padding:20px 24px;background:var(--charcoal);border-left:2px solid var(--pink)}
 .pmsg-item-title{font-size:13px;font-weight:700;color:var(--white);margin-bottom:6px}
-.pmsg-item-
 
 /* ── CTA SECTION ── */
 #cta{background:var(--charcoal);padding:100px 48px;text-align:center;position:relative;overflow:hidden}
@@ -462,7 +466,6 @@ html { scroll-behavior: smooth; }
 .pillar-content { flex: 1; }
 .pillar-title { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
 .pillar-line { width: 24px; height: 2px; background: var(--pink); margin-bottom: 8px; }
-.pillar-
 .dfs-ref { margin-top: 16px; padding: 14px 18px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); font-size: 12px; color: var(--gray); line-height: 1.8; }
 .dfs-ref a { color: var(--gray-light); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
 
@@ -521,8 +524,6 @@ html { scroll-behavior: smooth; }
 .benefit:hover { background: rgba(74,201,168,0.04); }
 .benefit-icon { font-size: 26px; margin-bottom: 12px; }
 .benefit-title { font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
-.benefit-
-
 /* 7. FAQ */
 #faq { background: var(--charcoal); }
 .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 48px; }
@@ -535,14 +536,12 @@ html { scroll-behavior: smooth; }
 .faq-icon { flex-shrink: 0; font-size: 18px; line-height: 1; color: #555; transition: transform 0.25s; margin-top: 1px; }
 .faq-item.open .faq-icon { transform: rotate(45deg); color: var(--pink-dark); }
 .faq-a { font-size: 14px; line-height: 1.9; padding: 0 0 20px 0; display: none; }
-.faq-item.open /* faq-a accordion controlled by JS */
+.faq-item.open .faq-a { display:block; animation:faqOpen 0.25s ease; }
 .trial-flow { display: flex; flex-direction: column; gap: 2px; }
 .flow-label { font-size: 12px; font-weight: 700; color: var(--white); margin-bottom: 14px; letter-spacing: 1px; }
 .trial-step { background: var(--charcoal); padding: 20px 22px; display: flex; gap: 18px; align-items: flex-start; }
 .ts-n { font-family: 'Noto Sans JP'; font-size: 22px; font-weight: 800; color: var(--pink-dark); flex-shrink: 0; line-height: 1; }
 .ts-title { font-size: 13px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
-.ts-
-
 /* 8. CTA */
 #cta { background: var(--charcoal); padding: 100px 48px; text-align: center; position: relative; overflow: hidden; }
 #cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 70% at 50% 50%, rgba(232,112,154,0.07), transparent); }
@@ -750,7 +749,6 @@ footer { background: #080808; padding: 56px 48px 36px; border-top: 1px solid rgb
 .ft-step:first-child { border-left: none; }
 .ft-time { font-size: 12px; letter-spacing: 2px; color: var(--pink-dark); margin-bottom: 8px; font-weight: 700; }
 .ft-title { font-size: 14px; font-weight: 700; color: #111; margin-bottom: 6px; }
-.ft-
 .ft-num { font-size: 13px; font-weight: 900; color: var(--pink-dark); letter-spacing: 1px; margin-bottom: 6px; opacity: 0.8; }
 @media (max-width: 768px) {
   .flow-timeline { flex-direction: column; gap: 0; }
@@ -760,12 +758,10 @@ footer { background: #080808; padding: 56px 48px 36px; border-top: 1px solid rgb
 /* ── Parent Message ── */
 #parentmsg { background: rgba(232,112,154,0.06); }
 .pmsg-inner { max-width: 860px; margin: 0 auto; }
-.pmsg-
 .pmsg-body strong { color: var(--white); font-weight: 700; }
 .pmsg-items { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 36px; }
 .pmsg-item { padding: 20px 24px; background: var(--charcoal); border-left: 2px solid var(--pink); }
 .pmsg-item-title { font-size: 13px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
-.pmsg-item-
 @media (max-width: 600px) { .pmsg-items { grid-template-columns: 1fr; } }
 
 /* ── Floating Mobile CTA ── */
@@ -776,8 +772,6 @@ footer { background: #080808; padding: 56px 48px 36px; border-top: 1px solid rgb
 .p3-item { background: var(--charcoal); padding: 36px 28px; }
 .p3-icon { font-size: 28px; margin-bottom: 16px; }
 .p3-title { font-size: 17px; font-weight: 800; color: var(--white); margin-bottom: 12px; }
-.p3-
-
 /* ── Checklist ── */
 #for-who .checklist { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 40px; }
 .cl-item { display: flex; gap: 12px; align-items: flex-start; padding: 16px 20px; background: #fff; font-size: 14px; color: #1a1a1a; line-height: 1.7; border: 1px solid rgba(0,0,0,0.07); box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
@@ -841,7 +835,6 @@ footer { background: #080808; padding: 56px 48px 36px; border-top: 1px solid rgb
 .ad-item-club { border-left-color: var(--pink); }
 .ad-label { font-size: 12px; font-weight: 700; color: var(--white); letter-spacing: 1px; margin-bottom: 8px; }
 .ad-item-club .ad-label { color: var(--pink); }
-.ad-
 .ad-link { font-size: 12px; color: var(--pink); text-decoration: none; }
 @media (max-width: 768px) { .about-inner { grid-template-columns: 1fr; gap: 28px; } }
 
@@ -1646,7 +1639,7 @@ body { line-height: 1.8; }
 
 
 <!-- スクール vs クラブ 2択カード -->
-<section style="background:#f5f3ef;padding:48px 32px">
+<section class="two-choice-wrap" style="background:#f5f3ef;padding:48px 32px">
   <div style="max-width:900px;margin:0 auto">
     <p style="text-align:center;font-size:12px;letter-spacing:3px;color:var(--pink-dark);text-transform:uppercase;margin-bottom:24px">WHICH FITS YOU?</p>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px" class="two-choice-grid">
@@ -1703,11 +1696,11 @@ body { line-height: 1.8; }
 <!-- 安心材料ブロック -->
 
 <!-- 対象学年まとめブロック -->
-<section style="background:#0c0c0c;padding:48px 48px;border-top:1px solid rgba(255,255,255,0.05)">
+<section class="sec-target-age" style="background:#0c0c0c;padding:48px 48px;border-top:1px solid rgba(255,255,255,0.05)">
   <div style="max-width:1200px;margin:0 auto">
     <span style="font-size:10px;letter-spacing:2px;color:#888;text-transform:uppercase;display:block;margin-bottom:20px">Target / 対象学年</span>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(255,255,255,0.04)">
-      <div style="background:#111;padding:28px 32px;border-top:2px solid #aaa">
+    <div class="target-age-grid" class="target-age-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(255,255,255,0.04)">
+      <div class="target-age-card" class="target-age-card" style="background:#111;padding:28px 32px;border-top:2px solid #aaa">
         <div style="font-size:10px;letter-spacing:2px;color:#aaa;text-transform:uppercase;margin-bottom:10px">CLOVERTY SOCCER SCHOOL</div>
         <div style="font-size:22px;font-weight:900;color:#fff;margin-bottom:12px">幼児〜中学生</div>
         <div style="font-size:13px;color:#888;line-height:1.9">
@@ -1717,7 +1710,7 @@ body { line-height: 1.8; }
         </div>
         <a href="school.html" style="display:inline-block;margin-top:16px;font-size:12px;color:#aaa;text-decoration:none">スクール詳細 →</a>
       </div>
-      <div style="background:#111;padding:28px 32px;border-top:2px solid var(--pink)">
+      <div class="target-age-card" class="target-age-card" style="background:#111;padding:28px 32px;border-top:2px solid var(--pink)">
         <div style="font-size:10px;letter-spacing:2px;color:var(--pink);text-transform:uppercase;margin-bottom:10px">CLOVERTY FC U-10</div>
         <div style="font-size:22px;font-weight:900;color:#fff;margin-bottom:12px">主に小学4年生以下</div>
         <div style="font-size:13px;color:#888;line-height:1.9">
@@ -1859,7 +1852,7 @@ body { line-height: 1.8; }
 </section>
 
 <!-- ⑤ 参加パターン -->
-<section id="courses" style="border-top:3px solid var(--pink)" class="sec" style="background:var(--black)">
+<section id="courses" class="sec" style="border-top:3px solid var(--pink);background:var(--black)">
   <div class="sec-inner">
     <span class="label reveal">Course / <span class="label-jp">クラブチーム 参加パターン</span></span>
     <h2 class="h2 reveal">ご家庭に合わせて<br><em>選べる参加パターン。</em></h2>
@@ -2282,6 +2275,33 @@ body { line-height: 1.8; }
     var q=item.querySelector('.faq-q');
     if(q)q.addEventListener('click',function(){var w=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(function(el){el.classList.remove('open');});if(!w)item.classList.add('open');});
   });
+
+  /* ── Mobile inline-style override ── */
+  (function(){
+    if(window.innerWidth > 768) return;
+    // Fix sections that have inline padding:48px which CSS !important can't always beat
+    document.querySelectorAll('section,div').forEach(function(el){
+      var s = el.getAttribute('style') || '';
+      // replace large horizontal padding with mobile-friendly value
+      var newS = s.replace(/padding\s*:\s*(\d+)px\s+48px/g, function(m, v){
+        return 'padding:' + v + 'px 16px';
+      }).replace(/padding\s*:\s*48px\s+48px/g, 'padding:40px 16px')
+        .replace(/padding\s*:\s*56px\s+48px/g, 'padding:48px 16px')
+        .replace(/padding\s*:\s*64px\s+48px/g, 'padding:48px 16px')
+        .replace(/padding\s*:\s*88px\s+48px/g, 'padding:52px 16px');
+      if(newS !== s) el.setAttribute('style', newS);
+    });
+    // Fix inline 2-col grids
+    document.querySelectorAll('[style]').forEach(function(el){
+      var s = el.getAttribute('style') || '';
+      if(s.includes('grid-template-columns:1fr 1fr') || s.includes('grid-template-columns: 1fr 1fr')) {
+        // skip known exceptions (e.g. 2-col in table)
+        var ns = s.replace(/grid-template-columns\s*:\s*1fr\s+1fr/g, 'grid-template-columns:1fr');
+        el.setAttribute('style', ns);
+      }
+    });
+  })();
+
   /* ── Gallery ── */
   var gr=document.getElementById('galleryRow'),gp=document.getElementById('galleryPrev'),gn=document.getElementById('galleryNext'),gd=document.querySelectorAll('.gallery-dot');
   if(gr&&gp&&gn){function ga(){var i=gr.querySelector('.gallery-item');return i?i.offsetWidth+4:340;}
@@ -2293,6 +2313,41 @@ body { line-height: 1.8; }
   if(sl.length){var cur=0;function gt(i){sl[cur].classList.remove('active');if(sd[cur])sd[cur].classList.remove('active');cur=(i+sl.length)%sl.length;sl[cur].classList.add('active');if(sd[cur])sd[cur].classList.add('active');}
   var st=setInterval(function(){gt(cur+1);},4000);sd.forEach(function(d,i){d.addEventListener('click',function(){clearInterval(st);gt(i);st=setInterval(function(){gt(cur+1);},4000);});});}
 
+})();
+</script>
+<script>
+/* Contrast fixes: inline style color overrides */
+(function(){
+  var lightBgSections = ['two-choice-wrap','sec-light','for-who','anxiety-block'];
+  var darkBgSections  = ['dayflow','schedule-overview','courses','philosophy',
+                          'about-cloverty','coaches','gallery','cta','growth','hero',
+                          'sec-target-age'];
+
+  // Fix #666 on dark bg → #aaa
+  document.querySelectorAll('[style]').forEach(function(el){
+    var s = el.getAttribute('style') || '';
+    if(!s.includes('color:#666') && !s.includes('color: #666')) return;
+    // Check if ancestor is dark section
+    var ancestor = el.closest(
+      '#dayflow,#schedule-overview,#courses,#philosophy,#about-cloverty,' +
+      '#coaches,#gallery,#cta,#growth,.sec-target-age,[style*="background:#111"],[style*="background:var(--black)"],[style*="background:var(--charcoal)"]'
+    );
+    if(ancestor){
+      el.setAttribute('style', s.replace(/color:#666/g,'color:#aaa').replace(/color: #666/g,'color:#aaa'));
+    }
+  });
+
+  // Fix #888 on light bg → #555
+  document.querySelectorAll('[style]').forEach(function(el){
+    var s = el.getAttribute('style') || '';
+    if(!s.includes('color:#888') && !s.includes('color: #888')) return;
+    var ancestor = el.closest(
+      '.two-choice-wrap,.sec-light,#for-who,[style*="background:#f"],[style*="background:var(--section-light)"]'
+    );
+    if(ancestor){
+      el.setAttribute('style', s.replace(/color:#888/g,'color:#555').replace(/color: #888/g,'color:#555'));
+    }
+  });
 })();
 </script>
 </body>
