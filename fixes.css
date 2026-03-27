@@ -822,3 +822,153 @@ footer {
 /* ── cta-check color ── */
 .cta-check { color: rgba(255,255,255,0.85) !important; }
 .cta-check::before { color: var(--pink) !important; }
+
+
+/* ════════════════════════════════════════════════════════════════
+   ⑥ DARK BACKGROUND — GRAY TEXT READABILITY OVERHAUL
+   全ダーク背景上のグレー系テキストを読みやすい濃度に統一
+   ════════════════════════════════════════════════════════════════ */
+
+/*
+ * ルール:
+ *   --gray (#888) on dark → #b0b0b0 に引き上げ (8.0:1 on charcoal)
+ *   rgba white 0.5以下 → 原則 0.78 以上に
+ *   --gray-light (#c8c8c8) はそのまま OK (10.4:1)
+ */
+
+/* ── CSS変数の再定義 (dark bg 専用) ── */
+/* グローバルに --gray を上書きするのではなく、
+   dark section 内のみ明度を上げるセレクタで対応 */
+
+/* === charcoal (#1a1a1a) / black (#0c0c0c) セクション共通 === */
+
+/* stat-l */
+.stat-l { color: #b0b0b0 !important; }
+
+/* hero position (rgba 0.5 → 読みにくい) */
+.hero-position { color: rgba(255,255,255,0.78) !important; }
+
+/* hero-sub2 (rgba 0.75) → OK だがさらに上げる */
+.hero-sub2 { color: rgba(255,255,255,0.85) !important; }
+
+/* btn-text on dark */
+.btn-text { color: rgba(255,255,255,0.82) !important; }
+
+/* hs-sep separator – decorative, but bump slightly */
+.hs-sep { color: rgba(255,255,255,0.5) !important; }
+
+/* rung系 */
+.rung-badge,
+.rung.s .rung-badge { color: #b0b0b0 !important; }
+.rung-who           { color: #b0b0b0 !important; }
+.rung-feats li      { color: #c0c0c0 !important; }
+.rung.s .rung-feats li::before { color: #b0b0b0 !important; }
+.rung-sub           { color: #b0b0b0 !important; }
+.ladder-note        { color: #b0b0b0 !important; }
+
+/* dfs-tag on charcoal */
+.dfs-tag { color: #b0b0b0 !important; }
+
+/* dfs-ref links on charcoal */
+.dfs-ref { color: #b0b0b0 !important; }
+
+/* pillar body on charcoal */
+.pillar-body { color: #c0c0c0 !important; }
+
+/* About section body text on charcoal */
+#about-cloverty p[style*="color:#c8c8c8"] { color: #d0d0d0 !important; }
+
+/* about-diff / ad-body on black */
+.ad-body { color: #c0c0c0 !important; }
+
+/* schedule overview */
+#schedule-overview .sc-venue { color: rgba(255,255,255,0.72) !important; }
+#schedule-overview .sc-type  { color: rgba(255,255,255,0.72) !important; }
+
+/* dayflow ft-body (rgba 0.7 → 0.82) */
+#dayflow .ft-body { color: rgba(255,255,255,0.82) !important; }
+#dayflow .ft-title { color: #ffffff !important; }
+#dayflow .ft-time  { color: var(--pink) !important; }
+#dayflow .ft-num   { color: var(--pink) !important; }
+
+/* coach bio on charcoal */
+.coach-bio { color: #c8c8c8 !important; }
+
+/* match-desc on charcoal/black */
+.match-desc { color: #c0c0c0 !important; }
+
+/* courses / pattern grid on black */
+#courses .pt-note  { color: #b0b0b0 !important; }
+#courses .pt-for   { color: #c0c0c0 !important; }
+#courses .pt-price span { color: #aaaaaa !important; }
+#courses .lead     { color: #c8c8c8 !important; }
+#courses p         { color: #b8b8b8 !important; }
+
+/* growth / ladder */
+#growth .lead  { color: #c8c8c8 !important; }
+
+/* gallery placeholder text */
+.gallery-placeholder-text { color: rgba(255,255,255,0.45) !important; }
+.gallery-placeholder-sub  { color: rgba(255,255,255,0.3) !important; }
+
+/* CTA section on charcoal */
+.cta-desc    { color: #c8c8c8 !important; }
+.cta-note    { color: #b8b8b8 !important; }
+.cta-no-push { color: rgba(255,255,255,0.82) !important; }
+.cub-sub     { color: #c8c8c8 !important; }
+
+/* footer on #080808 */
+.footer-tagline        { color: #b8b8b8 !important; }
+.footer-legacy         { color: #b8b8b8 !important; }
+.footer-legacy a       { color: #b8b8b8 !important; }
+.fc-title              { color: #b0b0b0 !important; }
+.footer-bottom         { color: #b0b0b0 !important; }
+.footer-bottom-links a { color: #b0b0b0 !important; }
+
+/* faq-a on charcoal (rgba 0.7 → 0.85) */
+#faq .faq-a { color: rgba(255,255,255,0.85) !important; }
+
+/* philosophy / pillar on charcoal */
+#philosophy .phil-body p { color: #c8c8c8 !important; }
+
+/* parent msg on pink-tint dark */
+#parentmsg .pmsg-body { color: #d0d0d0 !important; }
+
+/* benefits on charcoal */
+.benefit-body,
+.benefit-desc { color: #c0c0c0 !important; }
+
+/* coaches section - fix gray tags */
+#coaches .dfs-tag { color: #c0c0c0 !important; }
+
+/* about text on charcoal */
+#about-cloverty .ad-body { color: #c0c0c0 !important; }
+
+/* sc-note on dark sched */
+#schedule-overview .sc-note { color: rgba(255,255,255,0.7) !important; }
+
+/* hero-specs on black - already white, keep */
+
+/* growth rung link */
+.rung .btn-text { color: rgba(255,255,255,0.8) !important; }
+
+/* 注記テキスト ※ on dark backgrounds */
+.sec:not(.sec-light) p[style*="font-size:12px"],
+.sec:not(.sec-light) p[style*="font-size:11px"] {
+  color: #b8b8b8 !important;
+}
+
+/* inline #888 style attrs on dark → override via specificity */
+.sec:not(.sec-light) [style*="color:#888"] { color: #b0b0b0 !important; }
+.sec:not(.sec-light) [style*="color:#999"] { color: #bbbbbb !important; }
+.sec:not(.sec-light) [style*="color:#666"] { color: #b0b0b0 !important; }
+
+/* sc-venue on dark schedule overview */
+.sc-venue { font-size: 12px; }
+#schedule-overview .sc-card { background: rgba(255,255,255,0.05) !important; }
+#schedule-overview .sc-day  { color: #ffffff !important; font-size: 15px; font-weight: 800; }
+#schedule-overview .sc-time { color: var(--pink) !important; font-size: 18px; font-weight: 700; }
+
+/* footer-bottom-links hover */
+.footer-bottom-links a:hover { color: #ffffff !important; }
+.fc-links a:hover             { color: #ffffff !important; }
