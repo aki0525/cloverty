@@ -656,3 +656,169 @@ footer {
   color: #aaaaaa !important;
 }
 
+
+
+/* ════════════════════════════════════════════════════════════════
+   ⑤ CONTRAST & READABILITY FINAL FIXES
+   ════════════════════════════════════════════════════════════════ */
+
+/* ── FAQ: charcoal 背景での黒文字上書き問題を完全修正 ── */
+/* 第2CSSブロックの .faq-q { color: #111 } を確実に上書き */
+#faq .faq-q,
+#faq .faq-q-text,
+#faq .faq-list .faq-q {
+  color: #ffffff !important;
+}
+#faq .faq-q:hover {
+  color: var(--pink) !important;
+}
+#faq .faq-icon {
+  color: rgba(255,255,255,0.5) !important;
+}
+#faq .faq-item.open .faq-icon {
+  color: var(--pink) !important;
+}
+#faq .faq-a {
+  color: rgba(255,255,255,0.78) !important;
+}
+
+/* ── pink-dark (#c8547e) on light/white bg: 3.77〜4.18:1 → NG
+      → #a83060 に変更 (5.2:1 on white, 4.7:1 on section-light ✓) ── */
+.sec-light .label,
+.sec-light .label-jp,
+.sec-light .section-label {
+  color: #a83060 !important;
+}
+.sec-light .h2 em,
+.sec-light em {
+  color: #a83060 !important;
+}
+.sec-light .cl-check {
+  color: #a83060 !important;
+}
+.sec-light .faq-q-text::before {
+  color: #a83060 !important;
+}
+.sec-light .faq-q:hover {
+  color: #a83060 !important;
+}
+.sec-light .btn-text {
+  color: #666 !important;
+}
+
+/* anxiety-block (white bg) */
+#anxiety-block .answer-title { color: #a83060 !important; }
+#anxiety-block .answer-check { color: #a83060 !important; }
+#anxiety-block .anxiety-title { color: #111 !important; }
+
+/* pink-dark on section-light in specific elements */
+.sc-type { color: #a83060 !important; }
+.fb-title { color: #a83060 !important; }
+.rs-icon { color: #a83060 !important; }
+.rs-item strong { color: #a83060 !important; }
+#reassurance .rs-icon,
+#reassurance .rs-item strong {
+  color: #a83060 !important;
+}
+#reassurance-light .rs-icon,
+#reassurance-light .rs-item strong {
+  color: #a83060 !important;
+}
+
+/* ── charcoal bg 上の pink-dark label → use pink (#e8709a, 5.98:1) ── */
+/* label on charcoal/black bg: already uses var(--pink) = OK */
+/* But some labels use pink-dark on dark: fix these */
+.sec:not(.sec-light) .answer-title { color: var(--pink) !important; }
+.sec:not(.sec-light) .label { color: var(--pink) !important; }
+
+/* ── schedule cards on dark bg ── */
+#schedule-overview .sc-day { color: #fff !important; }
+#schedule-overview .sc-time { color: var(--pink) !important; }
+#schedule-overview .sc-venue { color: rgba(255,255,255,0.6) !important; }
+#schedule-overview .sc-type {
+  color: rgba(255,255,255,0.7) !important;
+  background: rgba(232,112,154,0.15) !important;
+}
+
+/* ── sc-note text on light bg ── */
+.sec-light .sc-note { color: #555 !important; }
+.sc-note { color: #555; }
+
+/* ── two-choice cards: note text ── */
+.two-choice-wrap p { color: #555 !important; }
+
+/* ── ad-link (詳しく見る) on dark bg ── */
+.ad-link { color: var(--pink) !important; }
+
+/* ── DFS link on dark bg ── */
+#philosophy a,
+#about-cloverty a {
+  color: rgba(255,255,255,0.7) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.2) !important;
+}
+
+/* ── gallery placeholder visibility ── */
+.gallery-placeholder {
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: background 0.25s;
+}
+.gallery-placeholder:hover {
+  background: linear-gradient(135deg, #252525 0%, #303030 100%);
+}
+.gallery-placeholder-icon {
+  font-size: 28px;
+  opacity: 0.35;
+}
+.gallery-placeholder-text {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,0.3);
+  text-transform: uppercase;
+}
+.gallery-placeholder-sub {
+  font-size: 11px;
+  color: rgba(255,255,255,0.2);
+}
+
+/* ── gallery item: ensure first child keeps wider width ── */
+.gallery-item:first-child {
+  flex: 0 0 480px !important;
+  width: 480px !important;
+}
+
+/* ── gallery item hover overlay ── */
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+.gallery-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(12,12,12,0.72) 0%, transparent 55%);
+  opacity: 0;
+  transition: opacity 0.25s;
+  display: flex; align-items: flex-end; padding: 14px 16px;
+}
+
+/* ── Body text in dark sections: ensure min contrast ── */
+#faq .faq-a a { color: var(--pink) !important; }
+#courses .lead { color: var(--gray-light) !important; }
+#courses p { color: rgba(255,255,255,0.65) !important; }
+#growth p { color: var(--gray-light) !important; }
+
+/* ── Ensure p3-body is clearly readable on dark ── */
+.p3-body {
+  color: var(--gray-light) !important;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+/* ── pmsg-item on dark/tint bg ── */
+#parentmsg .pmsg-item { background: rgba(255,255,255,0.06) !important; }
+#parentmsg .pmsg-item-title { color: var(--white) !important; }
+#parentmsg .pmsg-item-body { color: rgba(255,255,255,0.75) !important; }
+
+/* ── cta-check color ── */
+.cta-check { color: rgba(255,255,255,0.85) !important; }
+.cta-check::before { color: var(--pink) !important; }
